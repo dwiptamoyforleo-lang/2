@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Showcase - Modern Website Starter</title>
+  <meta name="description" content="Discover sample projects, interface layouts, and architectural patterns built using this clean web foundation.">
+  
+  <meta property="og:title" content="Showcase - Modern Website Starter">
+  <meta property="og:description" content="Discover sample projects, interface layouts, and architectural patterns.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Immediate Theme Initializer to Prevent Flash of Wrong Theme -->
+  <script>
+    (function() {
+      const pref = localStorage.getItem('site-theme-preference') || localStorage.getItem('site-theme') || 'dark';
+      let theme = pref;
+      if (pref === 'system') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('data-theme-preference', pref);
+    })();
+  </script>
+</head>
+<body>
+  <!-- Horizontal Scroll Progress Indicator -->
+  <div class="scroll-progress-container" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- ==========================================================================
+       SITE HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="Home">
+        <span class="brand-symbol">◈</span>
+        <span class="brand-name">BrandName</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="showcase.html" class="nav-link active">Showcase</a>
+        <a href="testimonials.html" class="nav-link">Testimonials</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="theme-selector">
+          <button class="theme-toggle-btn" aria-label="Select theme" aria-haspopup="true" aria-expanded="false" title="Select theme">
+            <span class="theme-btn-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </span>
+          </button>
+          <div class="theme-dropdown" role="menu" aria-label="Theme options">
+            <button type="button" class="theme-dropdown-item" data-theme-value="light" role="menuitem">
+              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="23" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+              <span class="theme-item-text">Light theme</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </button>
+            <button type="button" class="theme-dropdown-item" data-theme-value="dark" role="menuitem">
+              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              <span class="theme-item-text">Dark theme</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </button>
+            <button type="button" class="theme-dropdown-item" data-theme-value="system" role="menuitem">
+              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              <span class="theme-item-text">System default</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </button>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-outline btn-sm hide-on-mobile">Sign In</a>
+        <a href="overview.html" class="btn btn-primary btn-sm">Get Started</a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="features.html" class="mobile-nav-link">Features</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="showcase.html" class="mobile-nav-link active">Showcase</a>
+        <a href="testimonials.html" class="mobile-nav-link">Testimonials</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </nav>
+      <div class="mobile-nav-cta">
+        <a href="overview.html" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       PAGE HERO BANNER
+       ========================================================================== -->
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Showcase</span>
+      </div>
+      <h1 class="page-title">Project Showcase &amp; Implementations</h1>
+      <p class="page-lead">
+        Browse interactive layouts, interface designs, and scalable full-stack patterns built on this foundation. Click any item for an expanded preview.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SHOWCASE GRID & FILTERS
+       ========================================================================== -->
+  <section class="section">
+    <div class="container">
+      <!-- Interactive Filter Bar -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="analytics">Dashboards &amp; Data</button>
+        <button class="filter-btn" data-filter="mobile">Mobile Systems</button>
+        <button class="filter-btn" data-filter="cloud">Cloud Architecture</button>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="grid grid-3">
+        <!-- Item 1 -->
+        <div class="card showcase-card" data-category="analytics" data-lightbox data-title="Real-Time Analytics Suite" data-desc="Interactive charts, customizable telemetry widgets, and sub-50ms data streaming interfaces." data-icon="analytics">
+          <div class="showcase-thumbnail">
+            <div class="thumbnail-placeholder bg-gradient-1">
+              <span class="thumbnail-icon" style="color: #60a5fa;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                  <path d="M4 20h16"></path>
+                </svg>
+              </span>
+            </div>
+            <span class="zoom-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              Preview
+            </span>
+          </div>
+          <div class="showcase-info">
+            <span class="showcase-category">Analytics</span>
+            <h4 class="showcase-title">Real-Time Analytics Suite</h4>
+            <p class="showcase-desc">High-frequency telemetry dashboards with adaptive responsive layouts.</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="card showcase-card" data-category="mobile" data-lightbox data-title="Native-Feel Mobile App" data-desc="Touch gesture navigation, bottom sheet sheets, and optimized thumb zones for mobile devices." data-icon="mobile">
+          <div class="showcase-thumbnail">
+            <div class="thumbnail-placeholder bg-gradient-2">
+              <span class="thumbnail-icon" style="color: #22d3ee;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+              </span>
+            </div>
+            <span class="zoom-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              Preview
+            </span>
+          </div>
+          <div class="showcase-info">
+            <span class="showcase-category">Mobile</span>
+            <h4 class="showcase-title">Native-Feel Mobile App</h4>
+            <p class="showcase-desc">Touch gesture menus with instant mobile drawer interactions.</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="card showcase-card" data-category="cloud" data-lightbox data-title="Global Edge Deployment" data-desc="Automated continuous integration pipeline distributing static assets across 200+ edge locations." data-icon="cloud">
+          <div class="showcase-thumbnail">
+            <div class="thumbnail-placeholder bg-gradient-3">
+              <span class="thumbnail-icon" style="color: #a78bfa;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                </svg>
+              </span>
+            </div>
+            <span class="zoom-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              Preview
+            </span>
+          </div>
+          <div class="showcase-info">
+            <span class="showcase-category">Cloud</span>
+            <h4 class="showcase-title">Global Edge Deployment</h4>
+            <p class="showcase-desc">Geo-distributed content delivery with zero cache stampedes.</p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="card showcase-card" data-category="analytics" data-lightbox data-title="Financial Health Monitor" data-desc="Comprehensive cash-flow tracking with multi-currency conversion and automated reports." data-icon="finance">
+          <div class="showcase-thumbnail">
+            <div class="thumbnail-placeholder bg-gradient-2">
+              <span class="thumbnail-icon" style="color: #34d399;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+              </span>
+            </div>
+            <span class="zoom-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              Preview
+            </span>
+          </div>
+          <div class="showcase-info">
+            <span class="showcase-category">Analytics</span>
+            <h4 class="showcase-title">Financial Health Monitor</h4>
+            <p class="showcase-desc">High-clarity data visualization for complex transactional pipelines.</p>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="card showcase-card" data-category="mobile" data-lightbox data-title="E-Commerce Mobile Flow" data-desc="Frictionless checkout paths with integrated touch payments and accessible form fields." data-icon="ecommerce">
+          <div class="showcase-thumbnail">
+            <div class="thumbnail-placeholder bg-gradient-1">
+              <span class="thumbnail-icon" style="color: #fb7185;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                  <path d="M3 6h18"></path>
+                  <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+              </span>
+            </div>
+            <span class="zoom-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              Preview
+            </span>
+          </div>
+          <div class="showcase-info">
+            <span class="showcase-category">Mobile</span>
+            <h4 class="showcase-title">E-Commerce Mobile Flow</h4>
+            <p class="showcase-desc">Fast, single-handed mobile catalog navigation and checkout.</p>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="card showcase-card" data-category="cloud" data-lightbox data-title="Zero-Trust Security Mesh" data-desc="Granular role-based permissions and encrypted microservice transport layers." data-icon="security">
+          <div class="showcase-thumbnail">
+            <div class="thumbnail-placeholder bg-gradient-3">
+              <span class="thumbnail-icon" style="color: #a78bfa;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </span>
+            </div>
+            <span class="zoom-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              Preview
+            </span>
+          </div>
+          <div class="showcase-info">
+            <span class="showcase-category">Cloud</span>
+            <h4 class="showcase-title">Zero-Trust Security Mesh</h4>
+            <p class="showcase-desc">Standardized authentication models with end-to-end token auditing.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action Banner -->
+      <div class="cta-banner">
+        <h3 class="cta-banner-title">Have a specific design requirement?</h3>
+        <p class="cta-banner-text">
+          We can assist in transforming your requirements into clean, production-grade components.
+        </p>
+        <a href="contact.html" class="btn btn-primary btn-lg">Submit Project Brief</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <a href="index.html" class="brand-logo footer-logo">
+          <span class="brand-symbol">◈</span>
+          <span class="brand-name">BrandName</span>
+        </a>
+        <p class="footer-desc">
+          A modern, modular web template built with clean HTML5, robust CSS, and lightweight JavaScript.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Pages</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="overview.html">Get Started Overview</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="showcase.html">Showcase</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">Documentation</a></li>
+          <li><a href="features.html">Component Library</a></li>
+          <li><a href="showcase.html">Design System</a></li>
+          <li><a href="contact.html">Support Desk</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Privacy Policy</a></li>
+          <li><a href="index.html">Terms of Service</a></li>
+          <li><a href="index.html">Security Standards</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; <span class="current-year">2026</span> BrandName. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="index.html">Privacy</a>
+          <a href="index.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       LIGHTBOX MODAL
+       ========================================================================== -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close dialog">&times;</button>
+    <div class="lightbox-content-box">
+      <div class="lightbox-icon-wrap" id="lightbox-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+          <path d="M4 20h16"></path>
+        </svg>
+      </div>
+      <h3 class="lightbox-title" id="lightbox-title">Item Title</h3>
+      <p class="lightbox-caption" id="lightbox-caption">Item Description</p>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

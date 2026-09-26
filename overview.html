@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Started &amp; Overview - BrandName</title>
+  <meta name="description" content="Discover everything about BrandName. Explore our core offerings, key highlights, visitor information, and what you can do on our platform.">
+  
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Get Started &amp; Overview - BrandName">
+  <meta property="og:description" content="A comprehensive orientation and overview of our business offerings, visitor guide, and key highlights.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Immediate Theme Initializer to Prevent Flash of Wrong Theme -->
+  <script>
+    (function() {
+      const pref = localStorage.getItem('site-theme-preference') || localStorage.getItem('site-theme') || 'dark';
+      let theme = pref;
+      if (pref === 'system') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('data-theme-preference', pref);
+    })();
+  </script>
+</head>
+<body>
+  <!-- Horizontal Scroll Progress Indicator -->
+  <div class="scroll-progress-container" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- ==========================================================================
+       SITE HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="Home">
+        <span class="brand-symbol">◈</span>
+        <span class="brand-name">BrandName</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="showcase.html" class="nav-link">Showcase</a>
+        <a href="testimonials.html" class="nav-link">Testimonials</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Header Action Buttons -->
+      <div class="header-actions">
+        <!-- Compact 3-Option Theme Selector -->
+        <div class="theme-selector">
+          <button class="theme-toggle-btn" aria-label="Select theme" aria-haspopup="true" aria-expanded="false" title="Select theme">
+            <span class="theme-btn-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </span>
+          </button>
+          <div class="theme-dropdown" role="menu" aria-label="Theme options">
+            <button type="button" class="theme-dropdown-item" data-theme-value="light" role="menuitem">
+              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+              <span class="theme-item-text">Light theme</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </button>
+            <button type="button" class="theme-dropdown-item" data-theme-value="dark" role="menuitem">
+              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              <span class="theme-item-text">Dark theme</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </button>
+            <button type="button" class="theme-dropdown-item" data-theme-value="system" role="menuitem">
+              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              <span class="theme-item-text">System default</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Existing Standard Sign In Button (Kept 100% Unchanged) -->
+        <a href="contact.html" class="btn btn-outline btn-sm hide-on-mobile">Sign In</a>
+        <!-- Get Started Button -->
+        <a href="overview.html" class="btn btn-primary btn-sm">Get Started</a>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="features.html" class="mobile-nav-link">Features</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="showcase.html" class="mobile-nav-link">Showcase</a>
+        <a href="testimonials.html" class="mobile-nav-link">Testimonials</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </nav>
+      <div class="mobile-nav-cta">
+        <a href="overview.html" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO ORIENTATION SECTION (GET STARTED EXPERIENCE)
+       ========================================================================== -->
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Get Started Overview</span>
+      </div>
+      <h1 class="page-title">Welcome to BrandName: Complete Overview &amp; Guide</h1>
+      <p class="page-lead">
+        Your unified orientation to everything our brand provides. Explore what we offer, discover key highlights, review visitor information, and learn what you can do across our platform.
+      </p>
+
+      <!-- SECONDARY "SIGN IN" PORTAL BANNER -->
+      <!-- Distinct font, vibrant color scheme, pill geometry, and micro-interactions -->
+      <div class="signin-portal-banner">
+        <div class="signin-portal-info">
+          <span class="signin-portal-badge">Existing Client / Member</span>
+          <p class="signin-portal-message">
+            Already have an active account, reservation, or project with us? Access your records directly:
+          </p>
+        </div>
+        <!-- Secondary Sign In Button: Text specifically "Sign in", distinct typography and styling -->
+        <a href="contact.html" class="btn-signin-secondary" title="Access your existing account">
+          <span class="portal-icon">🔑</span>
+          <span>Sign in</span>
+          <span class="portal-arrow">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- Quick Highlights Bar -->
+      <div class="grid grid-4 overview-stats-grid">
+        <div class="card overview-stat-card">
+          <span class="overview-stat-number">100%</span>
+          <span class="overview-stat-label">Transparent</span>
+          <p class="overview-stat-desc">Upfront pricing, detailed specifications, and no unexpected commitments.</p>
+        </div>
+        <div class="card overview-stat-card">
+          <span class="overview-stat-number">4.9 / 5</span>
+          <span class="overview-stat-label">Satisfaction</span>
+          <p class="overview-stat-desc">Consistently rated excellent by verified clients, guests, and patrons.</p>
+        </div>
+        <div class="card overview-stat-card">
+          <span class="overview-stat-number">&lt; 24h</span>
+          <span class="overview-stat-label">Turnaround</span>
+          <p class="overview-stat-desc">Rapid confirmation for bookings, inquiries, and custom consultations.</p>
+        </div>
+        <div class="card overview-stat-card">
+          <span class="overview-stat-number">Direct</span>
+          <span class="overview-stat-label">Communication</span>
+          <p class="overview-stat-desc">Speak directly with knowledgeable team members, chefs, or specialists.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 1: BUSINESS INTRODUCTION & ESSENTIAL OFFERINGS
+       Reusable for: Products, Menus, Packages, Services, or Studio Collections
+       ========================================================================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Core Capabilities</span>
+        <h2 class="section-title">What We Offer</h2>
+        <p class="section-subtitle">
+          Designed with modular craftsmanship to deliver memorable, reliable results for every visitor and customer.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Offering 1: Primary Services / Flagship Menu / Core Solutions -->
+        <div class="card overview-offering-card">
+          <div>
+            <span class="category-pill">Category 01</span>
+            <h3 class="card-title">Flagship Offerings</h3>
+            <p class="card-text">
+              Our signature tier engineered for maximum reliability, elevated quality, and refined presentation.
+            </p>
+            <ul class="offering-item-list">
+              <li><span class="offering-check">✓</span> Tailored solutions adapted to your exact requirements</li>
+              <li><span class="offering-check">✓</span> Thorough quality checks and verified standards</li>
+              <li><span class="offering-check">✓</span> Comprehensive documentation and onboarding guide</li>
+            </ul>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <a href="features.html" class="btn btn-secondary btn-sm" style="width: 100%;">View Specifications &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Offering 2: Bespoke Experiences / Custom Appointments / Specialty -->
+        <div class="card overview-offering-card" style="border-color: var(--color-primary); box-shadow: var(--shadow-lg);">
+          <div>
+            <span class="category-pill" style="background-color: var(--color-primary); color: #ffffff;">Featured Tier</span>
+            <h3 class="card-title">Custom Experiences</h3>
+            <p class="card-text">
+              Dedicated consultations, bespoke packages, or personalized private sessions curated by our team.
+            </p>
+            <ul class="offering-item-list">
+              <li><span class="offering-check">✓</span> 1-on-1 discovery and custom project scoping</li>
+              <li><span class="offering-check">✓</span> Priority scheduling with flexible time windows</li>
+              <li><span class="offering-check">✓</span> Ongoing milestone updates and direct support channel</li>
+            </ul>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <a href="contact.html" class="btn btn-primary btn-sm" style="width: 100%;">Inquire / Book Consultation &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Offering 3: Ongoing Support / Maintenance / Regular Membership -->
+        <div class="card overview-offering-card">
+          <div>
+            <span class="category-pill">Category 03</span>
+            <h3 class="card-title">Support &amp; Community</h3>
+            <p class="card-text">
+              Continuous care, regular updates, warranty assistance, and access to our verified resource directory.
+            </p>
+            <ul class="offering-item-list">
+              <li><span class="offering-check">✓</span> Dedicated helpdesk assistance and quick replies</li>
+              <li><span class="offering-check">✓</span> Knowledge base with guides and FAQs</li>
+              <li><span class="offering-check">✓</span> Verified client community and exclusive announcements</li>
+            </ul>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <a href="about.html" class="btn btn-secondary btn-sm" style="width: 100%;">Learn About Us &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 2: IMPORTANT HIGHLIGHTS & KEY ATTRIBUTES
+       Interactive previews, lightboxes, and architectural highlights
+       ========================================================================== -->
+  <section class="section" style="background-color: var(--bg-surface-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">At a Glance</span>
+        <h2 class="section-title">Important Highlights</h2>
+        <p class="section-subtitle">
+          Key elements that define our standard of excellence and operational principles.
+        </p>
+      </div>
+
+      <div class="grid grid-2">
+        <!-- Highlight Card 1 -->
+        <div class="card" style="padding: 2.25rem; display: flex; gap: 1.5rem; align-items: flex-start;">
+          <div class="feature-icon" style="flex-shrink: 0; margin-bottom: 0;">⚡</div>
+          <div>
+            <h3 class="card-title">Engineered for Rapid Turnaround</h3>
+            <p class="card-text">
+              We eliminate friction from initiation to delivery. Inquiries receive responses within 24 hours, and projects or bookings benefit from automated scheduling and instant confirmation.
+            </p>
+            <button type="button" class="btn btn-outline btn-sm" data-lightbox data-title="Rapid Turnaround &amp; Response" data-desc="Our workflow pipelines and booking dispatch systems ensure minimal wait times and zero administrative friction." data-icon="⚡">
+              Preview Process Details
+            </button>
+          </div>
+        </div>
+
+        <!-- Highlight Card 2 -->
+        <div class="card" style="padding: 2.25rem; display: flex; gap: 1.5rem; align-items: flex-start;">
+          <div class="feature-icon" style="flex-shrink: 0; margin-bottom: 0;">🛡️</div>
+          <div>
+            <h3 class="card-title">Tested Standards &amp; Verified Integrity</h3>
+            <p class="card-text">
+              Every deliverable, service session, or product batch adheres to verified security, safety, and performance benchmarks. Our processes are open and rigorously evaluated.
+            </p>
+            <button type="button" class="btn btn-outline btn-sm" data-lightbox data-title="Verified Standards" data-desc="From high-contrast accessibility compliance to strict safety protocols, every touchpoint is tested for quality assurance." data-icon="🛡️">
+              View Standards Report
+            </button>
+          </div>
+        </div>
+
+        <!-- Highlight Card 3 -->
+        <div class="card" style="padding: 2.25rem; display: flex; gap: 1.5rem; align-items: flex-start;">
+          <div class="feature-icon" style="flex-shrink: 0; margin-bottom: 0;">🎨</div>
+          <div>
+            <h3 class="card-title">Clean &amp; Adaptive Aesthetic</h3>
+            <p class="card-text">
+              Built on clean semantic foundations, responsive proportions, and elegant dual theme modes (dark &amp; light) that look pristine on mobile, tablet, and desktop screens.
+            </p>
+            <button type="button" class="btn btn-outline btn-sm" data-lightbox data-title="Adaptive Design Philosophy" data-desc="Carefully tuned typography, generous breathing room, and responsive grid layouts ensure seamless navigation anywhere." data-icon="🎨">
+              Inspect Layout System
+            </button>
+          </div>
+        </div>
+
+        <!-- Highlight Card 4 -->
+        <div class="card" style="padding: 2.25rem; display: flex; gap: 1.5rem; align-items: flex-start;">
+          <div class="feature-icon" style="flex-shrink: 0; margin-bottom: 0;">🤝</div>
+          <div>
+            <h3 class="card-title">Transparent &amp; Fair Collaboration</h3>
+            <p class="card-text">
+              No hidden add-ons or locked-in contracts. You get crystal-clear deliverables, transparent milestones, and human-first customer service whenever you need assistance.
+            </p>
+            <button type="button" class="btn btn-outline btn-sm" data-lightbox data-title="Transparent Collaboration" data-desc="Honest estimates, clear terms of engagement, and dependable guarantees designed for long-term customer trust." data-icon="🤝">
+              Read Policy Overview
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: KEY INFORMATION VISITORS SHOULD KNOW
+       Operational Matrix (Hours, Address, Policies, Parking, Booking Details)
+       ========================================================================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Practical Details</span>
+        <h2 class="section-title">Key Information Visitors Should Know</h2>
+        <p class="section-subtitle">
+          Essential guidelines, timings, and operational details for planning your interaction with us.
+        </p>
+      </div>
+
+      <div class="card table-wrapper" style="overflow-x: auto; padding: 0;">
+        <table class="info-matrix-table">
+          <thead>
+            <tr>
+              <th style="width: 28%;">Topic / Category</th>
+              <th style="width: 42%;">Operational Details &amp; Guidelines</th>
+              <th style="width: 30%;">Action / Recommendations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>Operating Hours</strong>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Standard availability</div>
+              </td>
+              <td>
+                Monday &ndash; Friday: 9:00 AM &ndash; 6:00 PM PST<br>
+                Weekend appointments and emergency support available upon advance request.
+              </td>
+              <td>
+                <span class="category-pill" style="margin-bottom: 0;">Open Mon&ndash;Fri</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Physical Location &amp; HQ</strong>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Flagship address</div>
+              </td>
+              <td>
+                100 Innovation Way, Suite 400<br>
+                San Francisco, CA 94107, USA (Easy transit access &amp; guest parking available)
+              </td>
+              <td>
+                <a href="contact.html" class="action-card-link">View Directions &rarr;</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Reservations &amp; Booking</strong>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Advance scheduling</div>
+              </td>
+              <td>
+                Advance booking is recommended for custom consultations, private tastings, or studio tours. Walk-in inquiries welcomed during regular hours.
+              </td>
+              <td>
+                <a href="contact.html" class="btn btn-outline btn-sm">Schedule Now</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Accessibility &amp; Amenities</strong>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Comfort &amp; inclusion</div>
+              </td>
+              <td>
+                Full wheelchair accessibility, elevator access, high-contrast digital interfaces, and designated guest lounges with Wi-Fi.
+              </td>
+              <td>
+                <span style="color: var(--color-secondary); font-weight: 600;">Full Access</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Direct Communication</strong>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Phone &amp; email</div>
+              </td>
+              <td>
+                Phone: +1 (800) 555-0199<br>
+                Email: support@example.com (Inquiries answered within 24 hours)
+              </td>
+              <td>
+                <a href="mailto:support@example.com" class="action-card-link">Send Email &rarr;</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: WHY CHOOSE US?
+       Pillars of Distinction & Value Propositions
+       ========================================================================== -->
+  <section class="section" style="background-color: var(--bg-surface-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Our Distinction</span>
+        <h2 class="section-title">Why Choose BrandName?</h2>
+        <p class="section-subtitle">
+          Whether you require personal service, enterprise-grade engineering, or bespoke hospitality, here is why clients stay with us.
+        </p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="why-card">
+          <div class="why-icon-box">🏆</div>
+          <div class="why-body">
+            <h4>Proven Expertise &amp; Craft</h4>
+            <p>
+              Over a decade of combined industry mastery. Every component, recipe, treatment, or workflow has been polished to deliver flawless consistency.
+            </p>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon-box">🔒</div>
+          <div class="why-body">
+            <h4>Integrity &amp; Privacy First</h4>
+            <p>
+              We prioritize data safety, client confidentiality, and ethical operational standards across every digital touchpoint and physical service.
+            </p>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon-box">💬</div>
+          <div class="why-body">
+            <h4>Attentive, Personal Communication</h4>
+            <p>
+              No impersonal automated loops. When you reach out, you connect directly with genuine professionals focused on resolving your questions.
+            </p>
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon-box">🚀</div>
+          <div class="why-body">
+            <h4>Future-Proof &amp; Adaptable</h4>
+            <p>
+              Our systems and methodologies evolve seamlessly as your requirements grow, ensuring sustainable satisfaction for years to come.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5: WHAT YOU CAN DO ON THIS WEBSITE
+       Clear Visitor Action Directory & Exploration Paths
+       ========================================================================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Navigation Guide</span>
+        <h2 class="section-title">What You Can Do on This Website</h2>
+        <p class="section-subtitle">
+          A quick index of the main actions and sections available for you to explore right now.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Action 1: Explore Showcase -->
+        <div class="action-card">
+          <div>
+            <div class="action-card-header">
+              <div class="action-card-icon">📂</div>
+              <h3 class="action-card-title">Explore Showcase</h3>
+            </div>
+            <p class="action-card-desc">
+              Browse interactive layouts, project galleries, and sample implementations across diverse industries and use cases.
+            </p>
+          </div>
+          <a href="showcase.html" class="action-card-link">View Gallery &amp; Showcase &rarr;</a>
+        </div>
+
+        <!-- Action 2: Inspect Features -->
+        <div class="action-card">
+          <div>
+            <div class="action-card-header">
+              <div class="action-card-icon">⚙️</div>
+              <h3 class="action-card-title">Review Features</h3>
+            </div>
+            <p class="action-card-desc">
+              Examine detailed specifications, modular architecture elements, and interactive component demonstrations.
+            </p>
+          </div>
+          <a href="features.html" class="action-card-link">Explore Features &rarr;</a>
+        </div>
+
+        <!-- Action 3: Read Reviews -->
+        <div class="action-card">
+          <div>
+            <div class="action-card-header">
+              <div class="action-card-icon">⭐</div>
+              <h3 class="action-card-title">Read Reviews</h3>
+            </div>
+            <p class="action-card-desc">
+              Read verified testimonials, client case studies, and recommendations from customers who rely on our work daily.
+            </p>
+          </div>
+          <a href="testimonials.html" class="action-card-link">Read Testimonials &rarr;</a>
+        </div>
+
+        <!-- Action 4: Learn Our Story -->
+        <div class="action-card">
+          <div>
+            <div class="action-card-header">
+              <div class="action-card-icon">🏛️</div>
+              <h3 class="action-card-title">Our Story &amp; Team</h3>
+            </div>
+            <p class="action-card-desc">
+              Discover our mission, design philosophy, leadership values, and commitment to accessible digital experiences.
+            </p>
+          </div>
+          <a href="about.html" class="action-card-link">About Our Company &rarr;</a>
+        </div>
+
+        <!-- Action 5: Contact & Book -->
+        <div class="action-card">
+          <div>
+            <div class="action-card-header">
+              <div class="action-card-icon">✉️</div>
+              <h3 class="action-card-title">Inquire &amp; Book</h3>
+            </div>
+            <p class="action-card-desc">
+              Reach out directly to our support desk, request custom estimates, or submit a project consultation message.
+            </p>
+          </div>
+          <a href="contact.html" class="action-card-link">Open Contact Form &rarr;</a>
+        </div>
+
+        <!-- Action 6: Account Access / Sign In -->
+        <div class="action-card" style="border-color: rgba(168, 85, 247, 0.4); background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(168, 85, 247, 0.08));">
+          <div>
+            <div class="action-card-header">
+              <div class="action-card-icon" style="background: rgba(168, 85, 247, 0.2); color: #c084fc;">🔑</div>
+              <h3 class="action-card-title">Existing Account Access</h3>
+            </div>
+            <p class="action-card-desc">
+              Returning user or registered client? Use our secondary sign-in portal to access your account or reservation history.
+            </p>
+          </div>
+          <!-- Secondary Sign In Button: text specifically "Sign in" -->
+          <a href="contact.html" class="btn-signin-secondary" style="width: 100%; justify-content: center;">
+            <span class="portal-icon">🔑</span>
+            <span>Sign in</span>
+            <span class="portal-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 6: CALL TO ACTION BANNER
+       ========================================================================== -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="cta-banner">
+        <h3 class="cta-banner-title">Ready to take the next step?</h3>
+        <p class="cta-banner-text">
+          Have an inquiry, want to discuss a custom package, or need personalized assistance? Our team is ready to help you succeed.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 1rem;">
+          <a href="contact.html" class="btn btn-primary btn-lg">Contact Us Today</a>
+          <!-- Secondary Sign in option in CTA -->
+          <a href="contact.html" class="btn-signin-secondary" style="background: rgba(255, 255, 255, 0.15); border-color: rgba(255, 255, 255, 0.35);">
+            <span class="portal-icon">🔑</span>
+            <span>Sign in</span>
+            <span class="portal-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       LIGHTBOX / MODAL OVERLAY
+       ========================================================================== -->
+  <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="lightbox-dialog">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close dialog">&times;</button>
+      <div class="lightbox-content">
+        <div class="lightbox-icon" id="lightbox-icon">📊</div>
+        <h3 class="lightbox-title" id="lightbox-title">Feature Preview</h3>
+        <p class="lightbox-caption" id="lightbox-caption">Detailed specifications and interactive documentation view.</p>
+        <div class="lightbox-actions" style="margin-top: 1.5rem; display: flex; justify-content: flex-end;">
+          <a href="contact.html" class="btn btn-primary btn-sm">Contact Support</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <a href="index.html" class="brand-logo footer-logo">
+          <span class="brand-symbol">◈</span>
+          <span class="brand-name">BrandName</span>
+        </a>
+        <p class="footer-desc">
+          A modern, modular web template built with clean HTML5, robust CSS, and lightweight JavaScript.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Pages</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="overview.html">Get Started Overview</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="showcase.html">Showcase</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">Documentation</a></li>
+          <li><a href="features.html">Component Library</a></li>
+          <li><a href="showcase.html">Design System</a></li>
+          <li><a href="contact.html">Support Desk</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Privacy Policy</a></li>
+          <li><a href="index.html">Terms of Service</a></li>
+          <li><a href="index.html">Security Standards</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; <span class="current-year">2026</span> BrandName. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="index.html">Privacy</a>
+          <a href="index.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

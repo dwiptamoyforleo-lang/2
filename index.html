@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Website Starter - Home</title>
+  <meta name="description" content="A clean, responsive, and modern multi-page website boilerplate with semantic structure, modular styling, and interactive components.">
+  
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Modern Website Starter">
+  <meta property="og:description" content="A clean, responsive, and modern multi-page website boilerplate with semantic structure, modular styling, and interactive components.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Immediate Theme Initializer to Prevent Flash of Wrong Theme -->
+  <script>
+    (function() {
+      const pref = localStorage.getItem('site-theme-preference') || localStorage.getItem('site-theme') || 'dark';
+      let theme = pref;
+      if (pref === 'system') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('data-theme-preference', pref);
+    })();
+  </script>
+</head>
+<body>
+  <!-- Horizontal Scroll Progress Indicator -->
+  <div class="scroll-progress-container" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- ==========================================================================
+       SITE HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="Home">
+        <span class="brand-symbol">◈</span>
+        <span class="brand-name">BrandName</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="showcase.html" class="nav-link">Showcase</a>
+        <a href="testimonials.html" class="nav-link">Testimonials</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Header Action Buttons -->
+      <div class="header-actions">
+        <div class="theme-selector">
+          <button class="theme-toggle-btn" aria-label="Select theme" aria-haspopup="true" aria-expanded="false" title="Select theme">
+            <span class="theme-btn-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </span>
+          </button>
+          <div class="theme-dropdown" role="menu" aria-label="Theme options">
+            <button type="button" class="theme-dropdown-item" data-theme-value="light" role="menuitem">
+              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+              <span class="theme-item-text">Light theme</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </button>
+            <button type="button" class="theme-dropdown-item" data-theme-value="dark" role="menuitem">
+              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              <span class="theme-item-text">Dark theme</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </button>
+            <button type="button" class="theme-dropdown-item" data-theme-value="system" role="menuitem">
+              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              <span class="theme-item-text">System default</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </button>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-outline btn-sm hide-on-mobile">Sign In</a>
+        <a href="overview.html" class="btn btn-primary btn-sm">Get Started</a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link active">Home</a>
+        <a href="features.html" class="mobile-nav-link">Features</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="showcase.html" class="mobile-nav-link">Showcase</a>
+        <a href="testimonials.html" class="mobile-nav-link">Testimonials</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </nav>
+      <div class="mobile-nav-cta">
+        <a href="overview.html" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section class="section hero-section" id="hero">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="hero-tagline">
+          <span class="tag-indicator"></span> Next-Generation Web Architecture
+        </span>
+        <h1 class="hero-title">
+          Build remarkable web experiences with speed &amp; precision.
+        </h1>
+        <p class="hero-lead">
+          A production-grade multi-page framework engineered for digital products, modern landing pages, and accessible web experiences.
+        </p>
+        <div class="hero-buttons">
+          <a href="overview.html" class="btn btn-primary btn-lg">Get Started</a>
+          <a href="features.html" class="btn btn-secondary btn-lg">Explore Features</a>
+        </div>
+
+        <div class="hero-metrics">
+          <div class="metric-item">
+            <span class="metric-value">99.9%</span>
+            <span class="metric-label">Uptime Reliability</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value">100+</span>
+            <span class="metric-label">Pre-built Elements</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value">&lt; 50ms</span>
+            <span class="metric-label">Interaction Latency</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-media-wrapper">
+        <div class="hero-card-preview">
+          <div class="preview-header">
+            <div class="preview-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="preview-url">app.example.com</span>
+          </div>
+          <div class="preview-content">
+            <div class="preview-hero-mock">
+              <div class="mock-badge">Multi-Page Architecture</div>
+              <div class="mock-title">Dashboard Overview</div>
+              <div class="mock-graph">
+                <div class="mock-bar" style="height: 45%;"></div>
+                <div class="mock-bar" style="height: 70%;"></div>
+                <div class="mock-bar" style="height: 55%;"></div>
+                <div class="mock-bar" style="height: 90%;"></div>
+                <div class="mock-bar" style="height: 65%;"></div>
+                <div class="mock-bar" style="height: 100%;"></div>
+              </div>
+            </div>
+            <div class="mock-row">
+              <div class="mock-tile"></div>
+              <div class="mock-tile"></div>
+              <div class="mock-tile"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FEATURES OVERVIEW (TEASER)
+       ========================================================================== -->
+  <section class="section features-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Core Capabilities</span>
+        <h2 class="section-title">Designed for modern performance</h2>
+        <p class="section-subtitle">
+          Everything required to deliver fast, accessible, and scalable digital experiences.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card feature-card">
+          <div class="feature-icon icon-box-amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h3 class="feature-title">Ultra-Fast Performance</h3>
+          <p class="feature-desc">
+            Optimized assets and minimal render overhead provide swift loading speeds across devices.
+          </p>
+          <a href="features.html" class="feature-link">View details &rarr;</a>
+        </div>
+
+        <div class="card feature-card">
+          <div class="feature-icon icon-box-cyan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+          </div>
+          <h3 class="feature-title">Responsive By Design</h3>
+          <p class="feature-desc">
+            Fluid typography, adaptive layouts, and touch-first interactions ensure seamless rendering.
+          </p>
+          <a href="features.html" class="feature-link">View details &rarr;</a>
+        </div>
+
+        <div class="card feature-card">
+          <div class="feature-icon icon-box-emerald">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Secure &amp; Standards-Compliant</h3>
+          <p class="feature-desc">
+            Built following strict semantic standards and modern web accessibility guidelines.
+          </p>
+          <a href="features.html" class="feature-link">View details &rarr;</a>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="features.html" class="btn btn-outline">Explore All Features &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT TEASER
+       ========================================================================== -->
+  <section class="section about-section">
+    <div class="container split-container">
+      <div class="split-content">
+        <span class="section-tagline">Our Philosophy</span>
+        <h2 class="section-title">Built with modern web standards and clean code</h2>
+        <p class="split-lead">
+          We focus on building resilient foundations so creators, teams, and developers can deploy experiences without friction.
+        </p>
+        <ul class="value-list">
+          <li class="value-item">
+            <span class="value-check">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 8.5l3.5 3.5 6.5-7.5"/>
+              </svg>
+            </span>
+            <div><strong>Pure Semantic Structure:</strong> High-grade HTML5 semantics providing accessibility and natural hierarchy.</div>
+          </li>
+          <li class="value-item">
+            <span class="value-check">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 8.5l3.5 3.5 6.5-7.5"/>
+              </svg>
+            </span>
+            <div><strong>Lightweight Styling Engine:</strong> Zero dependencies required for rapid stylesheet maintenance.</div>
+          </li>
+        </ul>
+        <div class="split-actions">
+          <a href="about.html" class="btn btn-primary">Read Our Story &rarr;</a>
+          <a href="showcase.html" class="btn btn-secondary">View Showcase</a>
+        </div>
+      </div>
+
+      <div class="split-visual">
+        <div class="visual-card">
+          <div class="visual-header">
+            <span class="visual-badge">Modular Multi-Page Setup</span>
+            <span class="visual-meta">Production Ready</span>
+          </div>
+          <div class="visual-body">
+            <div class="code-preview-block">
+              <code>
+                <span class="code-comment">&lt;!-- Clean Page Navigation --&gt;</span><br>
+                &lt;<span class="code-tag">nav</span>&gt;<br>
+                &nbsp;&nbsp;&lt;<span class="code-tag">a</span> <span class="code-attr">href</span>=<span class="code-val">"features.html"</span>&gt;Features&lt;/<span class="code-tag">a</span>&gt;<br>
+                &nbsp;&nbsp;&lt;<span class="code-tag">a</span> <span class="code-attr">href</span>=<span class="code-val">"about.html"</span>&gt;About&lt;/<span class="code-tag">a</span>&gt;<br>
+                &nbsp;&nbsp;&lt;<span class="code-tag">a</span> <span class="code-attr">href</span>=<span class="code-val">"showcase.html"</span>&gt;Showcase&lt;/<span class="code-tag">a</span>&gt;<br>
+                &nbsp;&nbsp;&lt;<span class="code-tag">a</span> <span class="code-attr">href</span>=<span class="code-val">"contact.html"</span>&gt;Contact&lt;/<span class="code-tag">a</span>&gt;<br>
+                &lt;/<span class="code-tag">nav</span>&gt;
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SHOWCASE & TESTIMONIALS TEASERS
+       ========================================================================== -->
+  <section class="section showcase-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Highlights</span>
+        <h2 class="section-title">Explore sample projects &amp; reviews</h2>
+        <p class="section-subtitle">
+          See what is possible and hear directly from developers building with this system.
+        </p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card showcase-card" style="padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div class="feature-icon icon-box-indigo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Interactive Showcase</h3>
+            <p class="feature-desc">
+              Browse our portfolio of modern dashboard templates, mobile apps, and cloud architectures.
+            </p>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <a href="showcase.html" class="btn btn-primary">Open Showcase Page &rarr;</a>
+          </div>
+        </div>
+
+        <div class="card showcase-card" style="padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div class="feature-icon icon-box-blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Verified Reviews</h3>
+            <p class="feature-desc">
+              Read in-depth feedback, case studies, and recommendations from teams and independent creators.
+            </p>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <a href="testimonials.html" class="btn btn-secondary">Read Testimonials &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action Banner -->
+      <div class="cta-banner">
+        <h3 class="cta-banner-title">Ready to launch your project?</h3>
+        <p class="cta-banner-text">
+          Get started with our clean codebase and deploy your custom web experience in minutes.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem;">
+          <a href="overview.html" class="btn btn-primary btn-lg">Get Started</a>
+          <a href="contact.html" class="btn btn-secondary btn-lg">Contact Our Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <a href="index.html" class="brand-logo footer-logo">
+          <span class="brand-symbol">◈</span>
+          <span class="brand-name">BrandName</span>
+        </a>
+        <p class="footer-desc">
+          A modern, modular web template built with clean HTML5, robust CSS, and lightweight JavaScript.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Pages</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="overview.html">Get Started Overview</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="showcase.html">Showcase</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">Documentation</a></li>
+          <li><a href="features.html">Component Library</a></li>
+          <li><a href="showcase.html">Design System</a></li>
+          <li><a href="contact.html">Support Desk</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Privacy Policy</a></li>
+          <li><a href="index.html">Terms of Service</a></li>
+          <li><a href="index.html">Security Standards</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; <span class="current-year">2026</span> BrandName. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="index.html">Privacy</a>
+          <a href="index.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

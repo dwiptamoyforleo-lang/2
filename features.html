@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features - Modern Website Starter</title>
+  <meta name="description" content="Explore the comprehensive features, modular components, and performance optimizations engineered into this web framework.">
+  
+  <meta property="og:title" content="Features - Modern Website Starter">
+  <meta property="og:description" content="Explore the comprehensive features, modular components, and performance optimizations.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Immediate Theme Initializer to Prevent Flash of Wrong Theme -->
+  <script>
+    (function() {
+      const pref = localStorage.getItem('site-theme-preference') || localStorage.getItem('site-theme') || 'dark';
+      let theme = pref;
+      if (pref === 'system') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('data-theme-preference', pref);
+    })();
+  </script>
+</head>
+<body>
+  <!-- Horizontal Scroll Progress Indicator -->
+  <div class="scroll-progress-container" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- ==========================================================================
+       SITE HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="Home">
+        <span class="brand-symbol">◈</span>
+        <span class="brand-name">BrandName</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="features.html" class="nav-link active">Features</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="showcase.html" class="nav-link">Showcase</a>
+        <a href="testimonials.html" class="nav-link">Testimonials</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="theme-selector">
+          <button class="theme-toggle-btn" aria-label="Select theme" aria-haspopup="true" aria-expanded="false" title="Select theme">
+            <span class="theme-btn-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </span>
+          </button>
+          <div class="theme-dropdown" role="menu" aria-label="Theme options">
+            <button type="button" class="theme-dropdown-item" data-theme-value="light" role="menuitem">
+              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+              <span class="theme-item-text">Light theme</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </button>
+            <button type="button" class="theme-dropdown-item" data-theme-value="dark" role="menuitem">
+              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              <span class="theme-item-text">Dark theme</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </button>
+            <button type="button" class="theme-dropdown-item" data-theme-value="system" role="menuitem">
+              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              <span class="theme-item-text">System default</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </button>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-outline btn-sm hide-on-mobile">Sign In</a>
+        <a href="overview.html" class="btn btn-primary btn-sm">Get Started</a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="features.html" class="mobile-nav-link active">Features</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="showcase.html" class="mobile-nav-link">Showcase</a>
+        <a href="testimonials.html" class="mobile-nav-link">Testimonials</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </nav>
+      <div class="mobile-nav-cta">
+        <a href="overview.html" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       PAGE HERO BANNER
+       ========================================================================== -->
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Features</span>
+      </div>
+      <h1 class="page-title">Comprehensive Capabilities &amp; Architecture</h1>
+      <p class="page-lead">
+        Explore the built-in utilities, optimized performance metrics, and scalable patterns designed for modern web deployment.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FEATURE CATEGORIES GRID
+       ========================================================================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Engineered for Quality</span>
+        <h2 class="section-title">Core Architecture Highlights</h2>
+        <p class="section-subtitle">
+          Six foundational pillars that ensure rapid loading, exceptional responsiveness, and straightforward maintainability.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Feature 1 -->
+        <div class="card feature-card">
+          <div class="feature-icon icon-box-amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h3 class="feature-title">Zero Bloat Performance</h3>
+          <p class="feature-desc">
+            Stripped of unnecessary third-party scripts. Delivers sub-second initial paint times and optimal Core Web Vitals out of the box.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="card feature-card">
+          <div class="feature-icon icon-box-cyan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+          </div>
+          <h3 class="feature-title">Fluid Responsive Breakpoints</h3>
+          <p class="feature-desc">
+            Carefully crafted CSS media queries adapt typography, flex containers, and grid layouts seamlessly from 320px to 4K displays.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="card feature-card">
+          <div class="feature-icon icon-box-purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+              <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+              <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+              <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Centralized Custom Variables</h3>
+          <p class="feature-desc">
+            Easily rebrand entire projects by modifying `:root` variables for accent colors, surfaces, typography scales, and shadows.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="card feature-card">
+          <div class="feature-icon icon-box-emerald">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="4" r="2"></circle>
+              <path d="m4.93 10.93 4.24-4.24a4.5 4.5 0 0 1 6.36 0l4.24 4.24"></path>
+              <path d="M12 10.5v11.5"></path>
+              <path d="m8 16.5 4-2 4 2"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Accessibility &amp; Standards</h3>
+          <p class="feature-desc">
+            Engineered with strict WAI-ARIA attributes, semantic tags, logical tab sequences, and high contrast color pairings.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="card feature-card">
+          <div class="feature-icon icon-box-rose">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
+          <h3 class="feature-title">Search Engine Optimization</h3>
+          <p class="feature-desc">
+            Pre-configured OpenGraph social sharing meta tags, canonical URL structures, and crawl-friendly semantic headings.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="card feature-card">
+          <div class="feature-icon icon-box-indigo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="8" height="8" rx="1.5"></rect>
+              <rect x="13" y="3" width="8" height="8" rx="1.5"></rect>
+              <rect x="3" y="13" width="8" height="8" rx="1.5"></rect>
+              <rect x="13" y="13" width="8" height="8" rx="1.5"></rect>
+            </svg>
+          </div>
+          <h3 class="feature-title">Modular Component Model</h3>
+          <p class="feature-desc">
+            Headers, cards, drawers, metrics, lightboxes, and forms are completely decoupled for effortless reusability.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FEATURE COMPARISON TABLE
+       ========================================================================== -->
+  <section class="section" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Technical Comparison</span>
+        <h2 class="section-title">Framework Specifications</h2>
+        <p class="section-subtitle">
+          See how our lightweight architecture compares against traditional heavy site templates.
+        </p>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th>Our Architecture</th>
+              <th>Legacy Frameworks</th>
+              <th>Page Builder Templates</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bundle Overhead</strong></td>
+              <td><span class="table-check"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-7.5"/></svg></span> Under 25 KB gzipped</td>
+              <td><span class="table-cross"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg></span> 300 KB &ndash; 1 MB</td>
+              <td><span class="table-cross"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg></span> 2 MB+ JS/CSS</td>
+            </tr>
+            <tr>
+              <td><strong>External Dependencies</strong></td>
+              <td><span class="table-check"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-7.5"/></svg></span> Zero runtime runtime locks</td>
+              <td><span class="table-cross"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg></span> High package complexity</td>
+              <td><span class="table-cross"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg></span> Heavy proprietary plugins</td>
+            </tr>
+            <tr>
+              <td><strong>Semantic HTML5</strong></td>
+              <td><span class="table-check"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-7.5"/></svg></span> 100% Validated semantic markup</td>
+              <td><span class="table-check"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-7.5"/></svg></span> Standard markup</td>
+              <td><span class="table-cross"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg></span> Nested div wrapper traps</td>
+            </tr>
+            <tr>
+              <td><strong>Mobile Navigation</strong></td>
+              <td><span class="table-check"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-7.5"/></svg></span> Native CSS + Vanilla JS Drawer</td>
+              <td><span class="table-cross"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg></span> Heavy JS animation libraries</td>
+              <td><span class="table-cross"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg></span> Slow layout shift triggers</td>
+            </tr>
+            <tr>
+              <td><strong>Multi-Page Support</strong></td>
+              <td><span class="table-check"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-7.5"/></svg></span> Static HTML MPA + Vite Bundling</td>
+              <td><span class="table-check"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-7.5"/></svg></span> Supported</td>
+              <td><span class="table-cross"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg></span> Database queries required</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Call to Action Banner -->
+      <div class="cta-banner">
+        <h3 class="cta-banner-title">Need specialized custom features?</h3>
+        <p class="cta-banner-text">
+          Our component architecture is built to be customized for e-commerce, SaaS dashboards, or content marketing.
+        </p>
+        <a href="contact.html" class="btn btn-primary btn-lg">Inquire About Custom Setup</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <a href="index.html" class="brand-logo footer-logo">
+          <span class="brand-symbol">◈</span>
+          <span class="brand-name">BrandName</span>
+        </a>
+        <p class="footer-desc">
+          A modern, modular web template built with clean HTML5, robust CSS, and lightweight JavaScript.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Pages</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="overview.html">Get Started Overview</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="showcase.html">Showcase</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">Documentation</a></li>
+          <li><a href="features.html">Component Library</a></li>
+          <li><a href="showcase.html">Design System</a></li>
+          <li><a href="contact.html">Support Desk</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Privacy Policy</a></li>
+          <li><a href="index.html">Terms of Service</a></li>
+          <li><a href="index.html">Security Standards</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; <span class="current-year">2026</span> BrandName. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="index.html">Privacy</a>
+          <a href="index.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

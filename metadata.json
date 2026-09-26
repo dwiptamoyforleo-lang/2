@@ -1,0 +1,8 @@
+{
+  "name": "Sarvatt",
+  "description": "A clean, modern, and responsive website starter template with modular components and semantic code structure.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
