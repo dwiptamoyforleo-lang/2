@@ -78,10 +78,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBespoke, onNavigate }) => 
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-baseline gap-2">
               <span className="font-display-luxury text-2xl font-bold tracking-[0.25em] text-[#f4efe6]">
-                SARVATT
-              </span>
-              <span className="text-[#c9a84c] text-xs font-serif italic tracking-widest">
-                सर्वत्
+                BrandName
               </span>
             </div>
             <p className="text-xs text-white/50 leading-relaxed font-light max-w-sm">
@@ -89,8 +86,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBespoke, onNavigate }) => 
             </p>
             <div className="pt-2 text-xs text-[#c9a84c] tracking-widest">
               <span>CONCIERGE: </span>
-              <a href="mailto:concierge@sarvatt.com" className="underline hover:text-white">
-                concierge@sarvatt.com
+              <a href="mailto:concierge@brandname.com" className="underline hover:text-white">
+                concierge@brandname.com
               </a>
             </div>
           </div>
@@ -198,7 +195,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBespoke, onNavigate }) => 
         {/* Copyright and Legal */}
         <div className="mt-16 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between text-[11px] text-white/40 gap-4">
           <div className="flex items-center gap-2">
-            <span>© {new Date().getFullYear()} MAISON SARVATT ATELIER (सर्वत्). All Rights Reserved.</span>
+            <span>© {new Date().getFullYear()} MAISON BRANDNAME ATELIER. All Rights Reserved.</span>
           </div>
           <div className="flex items-center gap-6">
             <span>Discretion & Privacy Protocol</span>

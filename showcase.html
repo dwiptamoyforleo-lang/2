@@ -3,21 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atelier Showcase — Selected Work</title>
-  <meta name="description" content="A collection of fictional project directions for Atelier, from hospitality and product stories to studios, services, and digital experiences.">
-  
-  <meta property="og:title" content="Atelier Showcase — Selected Work">
-  <meta property="og:description" content="A collection of fictional project directions for Atelier, from hospitality and product stories to studios, services, and digital experiences.">
+  <title>Curated Showcase — Atelier Monograph</title>
+  <meta name="description" content="An exhibition gallery of architectural environments, bespoke objects, hospitality sanctums, and material studies.">
+
+  <meta property="og:title" content="Curated Showcase — Atelier Monograph">
+  <meta property="og:description" content="An exhibition gallery of architectural environments, bespoke objects, hospitality sanctums, and material studies.">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- Immediate Theme Initializer to Prevent Flash of Wrong Theme -->
   <script>
     (function() {
       const pref = localStorage.getItem('site-theme-preference') || localStorage.getItem('site-theme') || 'dark';
@@ -31,23 +29,20 @@
   </script>
 </head>
 <body>
-  <!-- Horizontal Scroll Progress Indicator -->
   <div class="scroll-progress-container" aria-hidden="true">
     <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
   </div>
 
-  <!-- ==========================================================================
-       SITE HEADER & NAVIGATION
-       ========================================================================== -->
-  <header class="site-header" id="site-header">
+  <!-- Top Bar -->
+  <header class="site-header">
     <div class="container header-container">
-      <a href="index.html" class="brand-logo" aria-label="Home">
-        <span class="brand-symbol">◈</span>
-        <span class="brand-name">Atelier</span>
+      <a href="index.html" class="brand-wordmark" aria-label="Atelier Home">
+        Atelier
       </a>
 
       <nav class="desktop-nav" aria-label="Main Navigation">
         <a href="index.html" class="nav-link">Home</a>
+        <a href="overview.html" class="nav-link">Overview</a>
         <a href="features.html" class="nav-link">Features</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="showcase.html" class="nav-link active">Showcase</a>
@@ -57,332 +52,320 @@
 
       <div class="header-actions">
         <div class="theme-selector">
-          <button class="theme-toggle-btn" aria-label="Select theme" aria-haspopup="true" aria-expanded="false" title="Select theme">
-            <span class="theme-btn-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-            </span>
+          <button type="button" class="theme-toggle-btn" aria-label="Select color theme" aria-haspopup="true" aria-expanded="false" title="Switch Theme">
+            <span class="theme-btn-icon"></span>
           </button>
-          <div class="theme-dropdown" role="menu" aria-label="Theme options">
+          <div class="theme-dropdown" role="menu">
             <button type="button" class="theme-dropdown-item" data-theme-value="light" role="menuitem">
-              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="23" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-              <span class="theme-item-text">Light theme</span>
-              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Light theme</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </button>
             <button type="button" class="theme-dropdown-item" data-theme-value="dark" role="menuitem">
-              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-              <span class="theme-item-text">Dark theme</span>
-              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Dark theme</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </button>
             <button type="button" class="theme-dropdown-item" data-theme-value="system" role="menuitem">
-              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-              <span class="theme-item-text">System default</span>
-              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>System default</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </button>
           </div>
         </div>
-        <a href="contact.html" class="btn btn-outline btn-sm hide-on-mobile">Sign In</a>
-        <a href="overview.html" class="btn btn-primary btn-sm">Get Started</a>
-        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="menu-bar"></span>
-          <span class="menu-bar"></span>
-          <span class="menu-bar"></span>
-        </button>
-      </div>
-    </div>
 
-    <!-- Mobile Navigation Drawer -->
-    <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
-      <nav class="mobile-nav-links">
-        <a href="index.html" class="mobile-nav-link">Home</a>
-        <a href="features.html" class="mobile-nav-link">Features</a>
-        <a href="about.html" class="mobile-nav-link">About</a>
-        <a href="showcase.html" class="mobile-nav-link active">Showcase</a>
-        <a href="testimonials.html" class="mobile-nav-link">Testimonials</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
-        <a href="overview.html" class="mobile-nav-link">Overview</a>
-      </nav>
-      <div class="mobile-nav-cta">
-        <a href="overview.html" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+        <a href="contact.html#signin" class="btn btn-outline btn-sm">Sign In</a>
+        <a href="overview.html" class="btn btn-primary btn-sm">Get Started</a>
+
+        <button type="button" class="menu-toggle-btn" id="editorial-menu-trigger" aria-label="Toggle Navigation Drawer" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- ==========================================================================
-       PAGE HERO BANNER
-       ========================================================================== -->
-  <section class="page-hero">
-    <div class="container page-hero-inner">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span>/</span>
-        <span>Showcase</span>
+  <!-- Editorial Drawer Backdrop & Slide-Out Menu -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="editorial-drawer" id="editorial-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <span class="editorial-kicker"><span class="editorial-kicker-dot"></span> Studio Index</span>
+      <button type="button" class="drawer-close-btn" id="drawer-close-btn" aria-label="Close Navigation Drawer">
+        Close ✕
+      </button>
+    </div>
+    <ul class="drawer-nav-list">
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">01</span>
+        <div>
+          <a href="index.html" class="drawer-nav-link">Home</a>
+          <span class="drawer-nav-desc">Opening composition and monograph tenets</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">02</span>
+        <div>
+          <a href="overview.html" class="drawer-nav-link">Overview</a>
+          <span class="drawer-nav-desc">Template blueprint, offerings &amp; secondary portal</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">03</span>
+        <div>
+          <a href="features.html" class="drawer-nav-link">Features</a>
+          <span class="drawer-nav-desc">Architectural capabilities &amp; component system</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">04</span>
+        <div>
+          <a href="about.html" class="drawer-nav-link">About</a>
+          <span class="drawer-nav-desc">Philosophy of permanence, materials &amp; craft</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">05</span>
+        <div>
+          <a href="showcase.html" class="drawer-nav-link">Showcase</a>
+          <span class="drawer-nav-desc">Curated spatial gallery &amp; archival plates</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">06</span>
+        <div>
+          <a href="testimonials.html" class="drawer-nav-link">Testimonials</a>
+          <span class="drawer-nav-desc">Letters of patronage &amp; verified commissions</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">07</span>
+        <div>
+          <a href="contact.html" class="drawer-nav-link">Contact</a>
+          <span class="drawer-nav-desc">Direct inquiries &amp; client authentication portal</span>
+        </div>
+      </li>
+    </ul>
+    <div class="drawer-footer">
+      <p class="drawer-dispatch">
+        Atelier is an adaptable design foundation for hospitality sanctums, architectural studios, creative salons, and luxury brands.
+      </p>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="overview.html" class="btn btn-primary btn-sm" style="flex: 1;">Explore Template</a>
+        <a href="contact.html#signin" class="btn btn-outline btn-sm">Client Portal</a>
       </div>
-      <h1 class="page-title">A wall of possibilities.</h1>
-      <p class="page-lead">These are imagined starting points, not finished client work. Use them to picture how the same structure could hold very different stories.</p>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       SHOWCASE HEADER
+       ========================================================================== -->
+  <section class="section section-border-bottom">
+    <div class="container">
+      <div class="editorial-kicker">
+        <span class="editorial-kicker-dot"></span>
+        <span>The Archival Plates</span>
+      </div>
+
+      <h1 class="editorial-title-page" style="margin-top: 1rem; margin-bottom: 1.5rem;">
+        Selected spatial studies and tactile editions.
+      </h1>
+
+      <p class="editorial-lead" style="margin-bottom: 3.5rem;">
+        An exhibition catalog spanning built architecture, private dining environments, bespoke furnishings, and physical studio materials. Select any plate to inspect accession metadata and photographic detail.
+      </p>
+
+      <!-- Category Filter Bar -->
+      <div class="gallery-filter-bar">
+        <button type="button" class="gallery-filter-btn active" data-filter="all">All Disciplines</button>
+        <button type="button" class="gallery-filter-btn" data-filter="architecture">Architecture</button>
+        <button type="button" class="gallery-filter-btn" data-filter="interiors">Interiors &amp; Salons</button>
+        <button type="button" class="gallery-filter-btn" data-filter="craft">Craft &amp; Materials</button>
+        <button type="button" class="gallery-filter-btn" data-filter="hospitality">Hospitality</button>
+      </div>
+
+      <!-- Asymmetrical 12-Column Gallery Layout -->
+      <div class="asymmetric-gallery-grid">
+        <!-- Plate 01: Travertine Pavilion -->
+        <div class="gallery-plate gallery-span-7" data-category="architecture" data-lightbox-trigger data-image-src="assets/images/atelier_hero_spatial_1790497375277.jpg" data-plate-title="The Travertine Loggia &amp; Courtyard" data-plate-desc="Full architectural perspective of the central courtyard loggia cut by natural morning light." data-plate-meta="ACC. 2026.01.14 · TUSCANY PAVILION">
+          <div class="gallery-media-wrapper" style="aspect-ratio: 16/10;">
+            <img src="assets/images/atelier_hero_spatial_1790497375277.jpg" alt="Travertine Loggia architecture" referrerPolicy="no-referrer">
+          </div>
+          <div class="gallery-plate-info">
+            <div>
+              <h3 class="gallery-plate-title">The Travertine Loggia</h3>
+              <p class="editorial-caption">Monolithic limestone and natural light cut</p>
+            </div>
+            <span class="gallery-plate-meta">ARCHITECTURE · 2026</span>
+          </div>
+        </div>
+
+        <!-- Plate 02: Fluted Lounge Interior -->
+        <div class="gallery-plate gallery-span-5" data-category="interiors" data-lightbox-trigger data-image-src="assets/images/atelier_lounge_interior_1790497405157.jpg" data-plate-title="Sanatorium Fluted Lounge" data-plate-desc="Acoustic fluted plaster walls and low sculptural seating in soft dawn luminance." data-plate-meta="ACC. 2026.02.08 · INTERIOR SALON">
+          <div class="gallery-media-wrapper" style="aspect-ratio: 4/3;">
+            <img src="assets/images/atelier_lounge_interior_1790497405157.jpg" alt="Sanatorium fluted lounge interior" referrerPolicy="no-referrer">
+          </div>
+          <div class="gallery-plate-info">
+            <div>
+              <h3 class="gallery-plate-title">The Fluted Sanctum</h3>
+              <p class="editorial-caption">Acoustic plaster and low sculptural seating</p>
+            </div>
+            <span class="gallery-plate-meta">INTERIORS · 2026</span>
+          </div>
+        </div>
+
+        <!-- Plate 03: Tactile Ceramic Still Life -->
+        <div class="gallery-plate gallery-span-4" data-category="craft" data-lightbox-trigger data-image-src="assets/images/atelier_craft_tactile_1790497388642.jpg" data-plate-title="Ceramic Vessel &amp; Organic Raw Linen" data-plate-desc="Hand-thrown stoneware vessel on organic unbleached linen and carved walnut block." data-plate-meta="ACC. 2026.03.22 · OBJECT EDITION 12">
+          <div class="gallery-media-wrapper" style="aspect-ratio: 1/1;">
+            <img src="assets/images/atelier_craft_tactile_1790497388642.jpg" alt="Handcrafted ceramic vessel and raw linen" referrerPolicy="no-referrer">
+          </div>
+          <div class="gallery-plate-info">
+            <div>
+              <h3 class="gallery-plate-title">Vessels in Still Water</h3>
+              <p class="editorial-caption">Wheel-thrown stoneware &amp; raw linen</p>
+            </div>
+            <span class="gallery-plate-meta">CRAFT · OBJECT</span>
+          </div>
+        </div>
+
+        <!-- Plate 04: Dining Table Setting -->
+        <div class="gallery-plate gallery-span-8" data-category="hospitality" data-lightbox-trigger data-image-src="assets/images/atelier_hospitality_setting_1790497434550.jpg" data-plate-title="The Candlelit Sanctum Table" data-plate-desc="Custom stoneware dinnerware, matte bronze silverware, and raw linen in warm evening service." data-plate-meta="ACC. 2026.04.05 · DINING SANCTUM">
+          <div class="gallery-media-wrapper" style="aspect-ratio: 16/9;">
+            <img src="assets/images/atelier_hospitality_setting_1790497434550.jpg" alt="Intimate minimalist candlelit dining table" referrerPolicy="no-referrer">
+          </div>
+          <div class="gallery-plate-info">
+            <div>
+              <h3 class="gallery-plate-title">Evening Service Staging</h3>
+              <p class="editorial-caption">Artisanal dinnerware &amp; unlacquered bronze cutlery</p>
+            </div>
+            <span class="gallery-plate-meta">HOSPITALITY · CULINARY</span>
+          </div>
+        </div>
+
+        <!-- Plate 05: Studio Materials Archive -->
+        <div class="gallery-plate gallery-span-12" data-category="craft" data-lightbox-trigger data-image-src="assets/images/atelier_materials_detail_1790497422048.jpg" data-plate-title="Drafting Archive &amp; Wool Parchment" data-plate-desc="Architectural sketches, swatch book of natural fabrics, and hand-tooled solid brass styling compass." data-plate-meta="ACC. 2026.05.19 · STUDIO MATERIAL STUDY">
+          <div class="gallery-media-wrapper" style="aspect-ratio: 21/9; max-height: 480px;">
+            <img src="assets/images/atelier_materials_detail_1790497422048.jpg" alt="Studio materials, parchment, and brass instruments" referrerPolicy="no-referrer">
+          </div>
+          <div class="gallery-plate-info">
+            <div>
+              <h3 class="gallery-plate-title">The Material Archive Compendium</h3>
+              <p class="editorial-caption">Raw wool, handmade parchment, and forged brass instruments</p>
+            </div>
+            <span class="gallery-plate-meta">CURATORIAL MONOGRAPH</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       SHOWCASE GRID & FILTERS
-       ========================================================================== -->
+  <!-- CTA -->
   <section class="section">
     <div class="container">
-      <!-- Interactive Filter Bar -->
-      <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">Everything</button>
-        <button class="filter-btn" data-filter="analytics">Studios &amp; Services</button>
-        <button class="filter-btn" data-filter="mobile">Hospitality &amp; Retail</button>
-        <button class="filter-btn" data-filter="cloud">Digital Products</button>
-      </div>
-
-      <!-- Cards Grid -->
-      <div class="grid grid-3">
-        <!-- Item 1 -->
-        <div class="card showcase-card" data-category="analytics" data-lightbox data-title="Real-Time Analytics Suite" data-desc="Interactive charts, customizable telemetry widgets, and sub-50ms data streaming interfaces." data-icon="analytics">
-          <div class="showcase-thumbnail">
-            <div class="thumbnail-placeholder bg-gradient-1">
-              <span class="thumbnail-icon" style="color: #60a5fa;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <line x1="18" y1="20" x2="18" y2="10"></line>
-                  <line x1="12" y1="20" x2="12" y2="4"></line>
-                  <line x1="6" y1="20" x2="6" y2="14"></line>
-                  <path d="M4 20h16"></path>
-                </svg>
-              </span>
-            </div>
-            <span class="zoom-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-              Preview
-            </span>
+      <div class="immersive-cta-banner">
+        <div class="cta-inner-constrained">
+          <div class="editorial-kicker">
+            <span class="editorial-kicker-dot"></span>
+            <span>Private Inquiries</span>
           </div>
-          <div class="showcase-info">
-            <span class="showcase-category">Studio</span>
-            <h4 class="showcase-title">North Room Studio</h4>
-            <p class="showcase-desc">A calm identity for a small creative studio whose best work needs room to breathe.</p>
+          <h2 class="editorial-title-page" style="margin: 0;">Commission a bespoke edition.</h2>
+          <p class="editorial-lead">
+            We accept a limited number of spatial, hospitality, and monograph commissions each season to ensure uncompromising dedication to detail.
+          </p>
+          <div class="cta-actions-row">
+            <a href="contact.html" class="btn btn-primary btn-lg">Begin Project Inquiry</a>
+            <a href="testimonials.html" class="btn btn-outline btn-lg">Read Letters of Patronage</a>
           </div>
         </div>
-
-        <!-- Item 2 -->
-        <div class="card showcase-card" data-category="mobile" data-lightbox data-title="Native-Feel Mobile App" data-desc="Touch gesture navigation, bottom sheet sheets, and optimized thumb zones for mobile devices." data-icon="mobile">
-          <div class="showcase-thumbnail">
-            <div class="thumbnail-placeholder bg-gradient-2">
-              <span class="thumbnail-icon" style="color: #22d3ee;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                </svg>
-              </span>
-            </div>
-            <span class="zoom-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-              Preview
-            </span>
-          </div>
-          <div class="showcase-info">
-            <span class="showcase-category">Hospitality</span>
-            <h4 class="showcase-title">Sunday Table</h4>
-            <p class="showcase-desc">A warm restaurant story built around seasonal plates, familiar faces, and the feeling of staying for one more course.</p>
-          </div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="card showcase-card" data-category="cloud" data-lightbox data-title="Global Edge Deployment" data-desc="Automated continuous integration pipeline distributing static assets across 200+ edge locations." data-icon="cloud">
-          <div class="showcase-thumbnail">
-            <div class="thumbnail-placeholder bg-gradient-3">
-              <span class="thumbnail-icon" style="color: #a78bfa;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
-                </svg>
-              </span>
-            </div>
-            <span class="zoom-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-              Preview
-            </span>
-          </div>
-          <div class="showcase-info">
-            <span class="showcase-category">Digital Product</span>
-            <h4 class="showcase-title">Field Notes App</h4>
-            <p class="showcase-desc">A focused mobile product for collecting observations, sketches, and ideas while away from a desk.</p>
-          </div>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="card showcase-card" data-category="analytics" data-lightbox data-title="Financial Health Monitor" data-desc="Comprehensive cash-flow tracking with multi-currency conversion and automated reports." data-icon="finance">
-          <div class="showcase-thumbnail">
-            <div class="thumbnail-placeholder bg-gradient-2">
-              <span class="thumbnail-icon" style="color: #34d399;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                  <polyline points="17 6 23 6 23 12"></polyline>
-                </svg>
-              </span>
-            </div>
-            <span class="zoom-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-              Preview
-            </span>
-          </div>
-          <div class="showcase-info">
-            <span class="showcase-category">Retail</span>
-            <h4 class="showcase-title">Common Objects</h4>
-            <p class="showcase-desc">An editorial storefront for useful things, made slowly and explained honestly.</p>
-          </div>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="card showcase-card" data-category="mobile" data-lightbox data-title="E-Commerce Mobile Flow" data-desc="Frictionless checkout paths with integrated touch payments and accessible form fields." data-icon="ecommerce">
-          <div class="showcase-thumbnail">
-            <div class="thumbnail-placeholder bg-gradient-1">
-              <span class="thumbnail-icon" style="color: #fb7185;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
-                  <path d="M3 6h18"></path>
-                  <path d="M16 10a4 4 0 0 1-8 0"></path>
-                </svg>
-              </span>
-            </div>
-            <span class="zoom-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-              Preview
-            </span>
-          </div>
-          <div class="showcase-info">
-            <span class="showcase-category">Service</span>
-            <h4 class="showcase-title">Afterlight Workshop</h4>
-            <p class="showcase-desc">A service business that replaces a wall of features with clear packages, process notes, and real answers.</p>
-          </div>
-        </div>
-
-        <!-- Item 6 -->
-        <div class="card showcase-card" data-category="cloud" data-lightbox data-title="Zero-Trust Security Mesh" data-desc="Granular role-based permissions and encrypted microservice transport layers." data-icon="security">
-          <div class="showcase-thumbnail">
-            <div class="thumbnail-placeholder bg-gradient-3">
-              <span class="thumbnail-icon" style="color: #a78bfa;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                  <path d="m9 12 2 2 4-4"></path>
-                </svg>
-              </span>
-            </div>
-            <span class="zoom-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-              Preview
-            </span>
-          </div>
-          <div class="showcase-info">
-            <span class="showcase-category">Editorial</span>
-            <h4 class="showcase-title">The Local Journal</h4>
-            <p class="showcase-desc">A local publication that turns places, people, and weekend discoveries into a readable digital magazine.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Call to Action Banner -->
-      <div class="cta-banner">
-        <h3 class="cta-banner-title">Have a story this wall does not cover?</h3>
-        <p class="cta-banner-text">That is the point. Bring the unusual idea, the niche service, the seasonal offer, or the business that does not fit a standard template.</p>
-        <a href="contact.html" class="btn btn-primary btn-lg">Submit Project Brief</a>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       SITE FOOTER
-       ========================================================================== -->
-  <footer class="site-footer">
-    <div class="container footer-container">
-      <div class="footer-col brand-col">
-        <a href="index.html" class="brand-logo footer-logo">
-          <span class="brand-symbol">◈</span>
-          <span class="brand-name">Atelier</span>
-        </a>
-        <p class="footer-desc">
-          An editorial multi-page concept for businesses that want their website to feel clear, warm, useful, and unmistakably their own.
-        </p>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-col-title">Pages</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="overview.html">Get Started Overview</a></li>
-          <li><a href="features.html">Features</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="showcase.html">Showcase</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-col-title">Resources</h4>
-        <ul class="footer-links">
-          <li><a href="about.html">Documentation</a></li>
-          <li><a href="features.html">Component Library</a></li>
-          <li><a href="showcase.html">Design System</a></li>
-          <li><a href="contact.html">Support Desk</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-col-title">Legal</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Privacy Policy</a></li>
-          <li><a href="index.html">Terms of Service</a></li>
-          <li><a href="index.html">Security Standards</a></li>
-        </ul>
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="lightbox-container">
+      <button type="button" class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close Lightbox">✕</button>
+      <div class="lightbox-content-grid">
+        <div class="lightbox-media-side">
+          <img id="lightbox-image" src="" alt="Expanded plate preview" referrerPolicy="no-referrer">
+        </div>
+        <div class="lightbox-info-side">
+          <div>
+            <span class="editorial-kicker" id="lightbox-meta">PLATE SPECIFICATION</span>
+            <h3 class="font-display" id="lightbox-title" style="font-size: 2rem; margin-top: 0.5rem; font-weight: 400;">Plate Title</h3>
+            <p class="editorial-lead" id="lightbox-desc" style="font-size: 0.95rem; margin-top: 1rem;">
+              Description of the selected plate and architectural provenance.
+            </p>
+          </div>
+          <div style="padding-top: 1.5rem; border-top: 1px solid var(--border-hairline);">
+            <a href="contact.html" class="btn btn-primary btn-sm">Inquire on This Plate</a>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <p>&copy; <span class="current-year">2026</span> Atelier Studio. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="index.html">Privacy</a>
-          <a href="index.html">Terms</a>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-monogram">
+          <span class="footer-brand-title">Atelier</span>
+          <p class="editorial-caption" style="max-width: 32ch;">
+            An adaptable digital template crafted for studios, hospitality sanctums, and architects seeking poise over acceleration.
+          </p>
+          <div style="margin-top: 0.5rem;">
+            <span class="font-mono text-xs text-muted">DIRECT CONCIERGE:</span>
+            <a href="mailto:concierge@atelier.example" style="font-size: 0.8125rem; display: block; color: var(--accent-curatorial);">concierge@atelier.example</a>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Directory</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="overview.html">Get Started Overview</a></li>
+            <li><a href="features.html">Specifications &amp; Features</a></li>
+            <li><a href="about.html">Studio Monograph</a></li>
+            <li><a href="showcase.html">Selected Showcase</a></li>
+            <li><a href="testimonials.html">Letters of Patronage</a></li>
+            <li><a href="contact.html">Inquiries &amp; Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Capabilities</h4>
+          <ul class="footer-links-list">
+            <li><a href="features.html">Spatial Staging</a></li>
+            <li><a href="features.html">Bespoke Furnishings</a></li>
+            <li><a href="features.html">Digital Monograph</a></li>
+            <li><a href="features.html">Cellar &amp; Dining Direction</a></li>
+            <li><a href="contact.html#signin">Client Access Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Salons</h4>
+          <ul class="footer-links-list">
+            <li><span>Milan — Via Brera 18</span></li>
+            <li><span>Kyoto — Higashiyama-ku</span></li>
+            <li><span>Paris — Rue de Turenne</span></li>
+            <li><span>Zurich — Limmatquai</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-large-wordmark-strip" aria-hidden="true">
+        <span>ATELIER</span>
+      </div>
+
+      <div class="footer-bottom-row">
+        <span>© <span class="current-year">2026</span> Atelier Monograph. Reusable Editorial Architecture.</span>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="overview.html">Overview Map</a>
+          <a href="contact.html#signin">Sign In</a>
           <a href="contact.html">Contact</a>
         </div>
       </div>
     </div>
   </footer>
-
-  <!-- ==========================================================================
-       LIGHTBOX MODAL
-       ========================================================================== -->
-  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <button class="lightbox-close" id="lightbox-close" aria-label="Close dialog">&times;</button>
-    <div class="lightbox-content-box">
-      <div class="lightbox-icon-wrap" id="lightbox-icon">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="18" y1="20" x2="18" y2="10"></line>
-          <line x1="12" y1="20" x2="12" y2="4"></line>
-          <line x1="6" y1="20" x2="6" y2="14"></line>
-          <path d="M4 20h16"></path>
-        </svg>
-      </div>
-      <h3 class="lightbox-title" id="lightbox-title">Item Title</h3>
-      <p class="lightbox-caption" id="lightbox-caption">Item Description</p>
-    </div>
-  </div>
 
   <script type="module" src="script.js"></script>
 </body>

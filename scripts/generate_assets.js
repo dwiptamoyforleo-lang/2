@@ -1,4 +1,4 @@
-// Node.js asset generator for Sārvatt restaurant assets
+// Node.js asset generator for BrandName restaurant assets
 import fs from 'fs';
 import path from 'path';
 
@@ -10,7 +10,7 @@ fs.mkdirSync(imgDir, { recursive: true });
 fs.mkdirSync(videoDir, { recursive: true });
 fs.mkdirSync(iconDir, { recursive: true });
 
-// SVG 1: Screenshot_20260925_063720_Gallery (The Sārvatt Journey Logo & Ambiance)
+// SVG 1: Screenshot_20260925_063720_Gallery (The BrandName Journey Logo & Ambiance)
 const svgLogoTitle = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" width="100%" height="100%">
   <defs>
     <radialGradient id="ambienceGlow" cx="50%" cy="40%" r="65%">
@@ -84,8 +84,8 @@ const svgLogoTitle = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 
     <!-- "The" -->
     <text x="0" y="-120" text-anchor="middle" font-family="'Cormorant Garamond', 'Playfair Display', Georgia, serif" font-size="52" font-weight="400" fill="#f8eed3" letter-spacing="8">The</text>
 
-    <!-- "Sārvatt" -->
-    <text x="0" y="-10" text-anchor="middle" font-family="'Cormorant Garamond', 'Playfair Display', Georgia, serif" font-size="124" font-weight="500" fill="#fcf6e8" letter-spacing="4" filter="url(#glow)">Sārvatt</text>
+    <!-- "BrandName" -->
+    <text x="0" y="-10" text-anchor="middle" font-family="'Cormorant Garamond', 'Playfair Display', Georgia, serif" font-size="124" font-weight="500" fill="#fcf6e8" letter-spacing="4" filter="url(#glow)">BrandName</text>
 
     <!-- "journey" -->
     <text x="0" y="85" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="82" font-style="italic" font-weight="300" fill="#edd6a1" letter-spacing="6">journey</text>
@@ -128,7 +128,7 @@ const svgDiningHall = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200
   <!-- Wall & Background Structure -->
   <rect width="1200" height="600" fill="url(#wallGradient)"/>
   
-  <!-- Architectural Fluted Cylinder Wall (Iconic feature of Sārvatt) -->
+  <!-- Architectural Fluted Cylinder Wall (Iconic feature of BrandName) -->
   <g transform="translate(480, 160)" opacity="0.9">
     <rect x="0" y="0" width="30" height="440" fill="#8c6a51" rx="8"/>
     <rect x="36" y="0" width="30" height="440" fill="#b08b6b" rx="8"/>
@@ -244,7 +244,7 @@ const svgDiningHall = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200
   <!-- Overlay Watermark / Label -->
   <g transform="translate(40, 840)">
     <rect x="-10" y="-30" width="460" height="42" fill="#09080b" opacity="0.85" rx="4"/>
-    <text x="10" y="-3" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="600" fill="#ffd269" letter-spacing="2">SĀRVATT DINING SANCTUM</text>
+    <text x="10" y="-3" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="600" fill="#ffd269" letter-spacing="2">BRANDNAME DINING SANCTUM</text>
     <text x="280" y="-3" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="400" fill="#ffffff" opacity="0.8" letter-spacing="1">HYATT REGENCY</text>
   </g>
 </svg>`;
@@ -611,11 +611,11 @@ fs.writeFileSync(path.join(imgDir, 'Screenshot_20260925_063115_Maps.svg'), svgCh
 fs.writeFileSync(path.join(imgDir, 'Screenshot_20260925_062947_Maps.svg'), svgMishtaanThaal);
 
 // Create semantic aliases as well
-fs.writeFileSync(path.join(imgDir, 'sarvatt-dining-hall.svg'), svgDiningHall);
-fs.writeFileSync(path.join(imgDir, 'sarvatt-naashta-pitara.svg'), svgNaashtaPitara);
-fs.writeFileSync(path.join(imgDir, 'sarvatt-chaat-platter.svg'), svgChaatPlatter);
-fs.writeFileSync(path.join(imgDir, 'sarvatt-mishtaan-thaal.svg'), svgMishtaanThaal);
-fs.writeFileSync(path.join(imgDir, 'sarvatt-journey-logo.svg'), svgLogoTitle);
+fs.writeFileSync(path.join(imgDir, 'brandname-dining-hall.svg'), svgDiningHall);
+fs.writeFileSync(path.join(imgDir, 'brandname-naashta-pitara.svg'), svgNaashtaPitara);
+fs.writeFileSync(path.join(imgDir, 'brandname-chaat-platter.svg'), svgChaatPlatter);
+fs.writeFileSync(path.join(imgDir, 'brandname-mishtaan-thaal.svg'), svgMishtaanThaal);
+fs.writeFileSync(path.join(imgDir, 'brandname-journey-logo.svg'), svgLogoTitle);
 
 // Also create valid JPEG/placeholder files with the exact names so any tool looking for .jpg finds a valid file
 // A minimal valid 1x1 JPEG Buffer header in base64:
@@ -628,11 +628,11 @@ const jpgNames = [
   'Screenshot_20260925_063103_Maps.jpg',
   'Screenshot_20260925_063115_Maps.jpg',
   'Screenshot_20260925_062947_Maps.jpg',
-  'sarvatt-dining-hall.jpg',
-  'sarvatt-naashta-pitara.jpg',
-  'sarvatt-chaat-platter.jpg',
-  'sarvatt-mishtaan-thaal.jpg',
-  'sarvatt-journey-logo.jpg'
+  'brandname-dining-hall.jpg',
+  'brandname-naashta-pitara.jpg',
+  'brandname-chaat-platter.jpg',
+  'brandname-mishtaan-thaal.jpg',
+  'brandname-journey-logo.jpg'
 ];
 
 jpgNames.forEach(name => {
@@ -643,9 +643,9 @@ jpgNames.forEach(name => {
 });
 
 // Create video placeholder file
-const videoTarget = path.join(videoDir, 'sarvatt-journey.mp4');
+const videoTarget = path.join(videoDir, 'brandname-journey.mp4');
 if (!fs.existsSync(videoTarget)) {
   fs.writeFileSync(videoTarget, Buffer.from(''));
 }
 
-console.log('Successfully generated all media assets for Sārvatt!');
+console.log('Successfully generated all media assets for BrandName!');

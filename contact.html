@@ -3,21 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Atelier — Start a Conversation</title>
-  <meta name="description" content="A simple contact page for project questions, collaborations, bookings, custom requirements, and general enquiries.">
-  
-  <meta property="og:title" content="Contact Atelier — Start a Conversation">
-  <meta property="og:description" content="A simple contact page for project questions, collaborations, bookings, custom requirements, and general enquiries.">
+  <title>Contact &amp; Client Access — Atelier</title>
+  <meta name="description" content="Inquire about a new spatial or monograph commission, or access your private client portal.">
+
+  <meta property="og:title" content="Contact &amp; Client Access — Atelier">
+  <meta property="og:description" content="Inquire about a new spatial or monograph commission, or access your private client portal.">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- Immediate Theme Initializer to Prevent Flash of Wrong Theme -->
   <script>
     (function() {
       const pref = localStorage.getItem('site-theme-preference') || localStorage.getItem('site-theme') || 'dark';
@@ -31,23 +29,20 @@
   </script>
 </head>
 <body>
-  <!-- Horizontal Scroll Progress Indicator -->
   <div class="scroll-progress-container" aria-hidden="true">
     <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
   </div>
 
-  <!-- ==========================================================================
-       SITE HEADER & NAVIGATION
-       ========================================================================== -->
-  <header class="site-header" id="site-header">
+  <!-- Top Bar -->
+  <header class="site-header">
     <div class="container header-container">
-      <a href="index.html" class="brand-logo" aria-label="Home">
-        <span class="brand-symbol">◈</span>
-        <span class="brand-name">Atelier</span>
+      <a href="index.html" class="brand-wordmark" aria-label="Atelier Home">
+        Atelier
       </a>
 
       <nav class="desktop-nav" aria-label="Main Navigation">
         <a href="index.html" class="nav-link">Home</a>
+        <a href="overview.html" class="nav-link">Overview</a>
         <a href="features.html" class="nav-link">Features</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="showcase.html" class="nav-link">Showcase</a>
@@ -57,197 +52,306 @@
 
       <div class="header-actions">
         <div class="theme-selector">
-          <button class="theme-toggle-btn" aria-label="Select theme" aria-haspopup="true" aria-expanded="false" title="Select theme">
-            <span class="theme-btn-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-            </span>
+          <button type="button" class="theme-toggle-btn" aria-label="Select color theme" aria-haspopup="true" aria-expanded="false" title="Switch Theme">
+            <span class="theme-btn-icon"></span>
           </button>
-          <div class="theme-dropdown" role="menu" aria-label="Theme options">
+          <div class="theme-dropdown" role="menu">
             <button type="button" class="theme-dropdown-item" data-theme-value="light" role="menuitem">
-              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="23" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-              <span class="theme-item-text">Light theme</span>
-              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Light theme</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </button>
             <button type="button" class="theme-dropdown-item" data-theme-value="dark" role="menuitem">
-              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-              <span class="theme-item-text">Dark theme</span>
-              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Dark theme</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </button>
             <button type="button" class="theme-dropdown-item" data-theme-value="system" role="menuitem">
-              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-              <span class="theme-item-text">System default</span>
-              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>System default</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </button>
           </div>
         </div>
-        <a href="contact.html" class="btn btn-outline btn-sm hide-on-mobile">Sign In</a>
-        <a href="overview.html" class="btn btn-primary btn-sm">Get Started</a>
-        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="menu-bar"></span>
-          <span class="menu-bar"></span>
-          <span class="menu-bar"></span>
-        </button>
-      </div>
-    </div>
 
-    <!-- Mobile Navigation Drawer -->
-    <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
-      <nav class="mobile-nav-links">
-        <a href="index.html" class="mobile-nav-link">Home</a>
-        <a href="features.html" class="mobile-nav-link">Features</a>
-        <a href="about.html" class="mobile-nav-link">About</a>
-        <a href="showcase.html" class="mobile-nav-link">Showcase</a>
-        <a href="testimonials.html" class="mobile-nav-link">Testimonials</a>
-        <a href="contact.html" class="mobile-nav-link active">Contact</a>
-        <a href="overview.html" class="mobile-nav-link">Overview</a>
-      </nav>
-      <div class="mobile-nav-cta">
-        <a href="overview.html" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+        <a href="contact.html#signin" class="btn btn-outline btn-sm">Sign In</a>
+        <a href="overview.html" class="btn btn-primary btn-sm">Get Started</a>
+
+        <button type="button" class="menu-toggle-btn" id="editorial-menu-trigger" aria-label="Toggle Navigation Drawer" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- ==========================================================================
-       PAGE HERO BANNER
-       ========================================================================== -->
-  <section class="page-hero">
-    <div class="container page-hero-inner">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span>/</span>
-        <span>Contact</span>
-      </div>
-      <h1 class="page-title">Have something in mind? Start here.</h1>
-      <p class="page-lead">Tell us what you are building, changing, opening, making, or trying to explain. A rough idea is completely fine.</p>
+  <!-- Editorial Drawer Backdrop & Slide-Out Menu -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="editorial-drawer" id="editorial-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <span class="editorial-kicker"><span class="editorial-kicker-dot"></span> Studio Index</span>
+      <button type="button" class="drawer-close-btn" id="drawer-close-btn" aria-label="Close Navigation Drawer">
+        Close ✕
+      </button>
     </div>
-  </section>
+    <ul class="drawer-nav-list">
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">01</span>
+        <div>
+          <a href="index.html" class="drawer-nav-link">Home</a>
+          <span class="drawer-nav-desc">Opening composition and monograph tenets</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">02</span>
+        <div>
+          <a href="overview.html" class="drawer-nav-link">Overview</a>
+          <span class="drawer-nav-desc">Template blueprint, offerings &amp; secondary portal</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">03</span>
+        <div>
+          <a href="features.html" class="drawer-nav-link">Features</a>
+          <span class="drawer-nav-desc">Architectural capabilities &amp; component system</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">04</span>
+        <div>
+          <a href="about.html" class="drawer-nav-link">About</a>
+          <span class="drawer-nav-desc">Philosophy of permanence, materials &amp; craft</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">05</span>
+        <div>
+          <a href="showcase.html" class="drawer-nav-link">Showcase</a>
+          <span class="drawer-nav-desc">Curated spatial gallery &amp; archival plates</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">06</span>
+        <div>
+          <a href="testimonials.html" class="drawer-nav-link">Testimonials</a>
+          <span class="drawer-nav-desc">Letters of patronage &amp; verified commissions</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">07</span>
+        <div>
+          <a href="contact.html" class="drawer-nav-link">Contact</a>
+          <span class="drawer-nav-desc">Direct inquiries &amp; client authentication portal</span>
+        </div>
+      </li>
+    </ul>
+    <div class="drawer-footer">
+      <p class="drawer-dispatch">
+        Atelier is an adaptable design foundation for hospitality sanctums, architectural studios, creative salons, and luxury brands.
+      </p>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="overview.html" class="btn btn-primary btn-sm" style="flex: 1;">Explore Template</a>
+        <a href="contact.html#signin" class="btn btn-outline btn-sm">Client Portal</a>
+      </div>
+    </div>
+  </aside>
 
   <!-- ==========================================================================
-       CONTACT DIRECTORY & FORM
+       CONTACT & AUTH HERO
        ========================================================================== -->
-  <section class="section">
+  <section class="section section-border-bottom">
     <div class="container">
-      <div class="grid grid-2 contact-grid">
-        <!-- Direct Directory Card -->
-        <div class="card contact-info-card">
-          <h2 class="contact-card-title">A few easy ways to begin</h2>
-          <p class="contact-card-sub">This is sample contact copy for the template. Replace the departments, addresses, opening hours, and contact details with your real information before publishing.</p>
+      <div class="editorial-kicker">
+        <span class="editorial-kicker-dot"></span>
+        <span>Dialogue &amp; Access</span>
+      </div>
 
-          <div class="contact-entries">
-            <!-- Email -->
-            <div class="entry-row">
-              <div class="entry-icon icon-box-blue">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                </svg>
+      <h1 class="editorial-title-page" style="margin-top: 1rem; margin-bottom: 1.5rem;">
+        Start a dialogue or access your client sanctuary.
+      </h1>
+
+      <p class="editorial-lead" style="margin-bottom: 3.5rem;">
+        Whether you are commissioning a new space, scheduling an in-person salon visit in Milan or Kyoto, or signing in to inspect active project documentation, choose your path below.
+      </p>
+
+      <!-- Portal Tabs (Inquiry vs Sign In) -->
+      <div class="contact-portal-tabs" role="tablist">
+        <button type="button" class="portal-tab-btn active" data-portal-tab="inquiry" role="tab" aria-selected="true">
+          New Project Inquiry
+        </button>
+        <button type="button" class="portal-tab-btn" data-portal-tab="signin" role="tab" aria-selected="false">
+          Client Sign In &amp; Access Pass
+        </button>
+      </div>
+
+      <!-- Main Layout: Form Side + Direct Directory Side -->
+      <div style="display: grid; grid-template-columns: 1fr; gap: clamp(2.5rem, 5vw, 4.5rem);" class="manifesto-split-grid">
+        <!-- Left Side: Interactive Panels -->
+        <div>
+          <!-- PANEL 1: INQUIRY FORM -->
+          <div id="inquiry-panel">
+            <form id="inquiry-form" class="form-layout-grid" onsubmit="window.handleInquirySubmit(event, this)">
+              <div class="form-row-dual">
+                <div class="form-field">
+                  <label for="inquiry-name">Your Full Name *</label>
+                  <input type="text" id="inquiry-name" name="name" required placeholder="Elena Vasari">
+                </div>
+                <div class="form-field">
+                  <label for="inquiry-email">Email Address *</label>
+                  <input type="email" id="inquiry-email" name="email" required placeholder="elena@studio.example">
+                </div>
               </div>
-              <div class="entry-data">
-                <span class="entry-label">General questions</span>
-                <a href="mailto:hello@atelier.example" class="entry-value">hello@atelier.example</a>
+
+              <div class="form-row-dual">
+                <div class="form-field">
+                  <label for="inquiry-discipline">Primary Discipline *</label>
+                  <select id="inquiry-discipline" name="discipline" required>
+                    <option value="">Select a discipline...</option>
+                    <option value="spatial">Spatial Architecture &amp; Environment</option>
+                    <option value="hospitality">Hospitality &amp; Dining Sanctum</option>
+                    <option value="furniture">Bespoke Furnishings &amp; Objects</option>
+                    <option value="monograph">Curatorial Digital Monograph</option>
+                    <option value="other">General Studio Dialogue</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="inquiry-timeline">Estimated Timeline</label>
+                  <input type="text" id="inquiry-timeline" name="timeline" placeholder="e.g. Q3 / Q4 2026">
+                </div>
               </div>
+
+              <div class="form-field">
+                <label for="inquiry-message">Tell us about your space or vision *</label>
+                <textarea id="inquiry-message" name="message" rows="5" required placeholder="Describe the atmosphere, scale, materials, and expectations for the project..."></textarea>
+              </div>
+
+              <div style="margin-top: 1rem;">
+                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                  Transmit Inquiry to Atelier Concierge
+                </button>
+                <span class="editorial-caption" style="display: block; text-align: center; margin-top: 0.75rem;">
+                  Confidentiality guaranteed · Direct reply within one working day
+                </span>
+              </div>
+            </form>
+
+            <div id="inquiry-success-box" class="form-success-banner">
+              <span class="editorial-kicker" style="color: var(--accent-curatorial);">DISPATCH CONFIRMED</span>
+              <h3 class="font-display" style="font-size: 2rem; margin: 0.75rem 0;">Inquiry transmitted to Atelier Concierge</h3>
+              <p class="editorial-lead" style="font-size: 0.95rem; margin-bottom: 2rem;">
+                Thank you for reaching out. A Senior Partner or Project Archivist will review your notes and reply directly to your email within one business day.
+              </p>
+              <button type="button" class="btn btn-outline btn-sm" onclick="window.resetInquiryForm()">
+                Transmit Another Note
+              </button>
+            </div>
+          </div>
+
+          <!-- PANEL 2: CLIENT SIGN-IN & AUTHENTICATION PORTAL -->
+          <div id="signin-panel" style="display: none;">
+            <div id="signin-form-wrapper" style="background-color: var(--bg-surface); padding: 2.5rem; border: 1px solid var(--border-accent); border-radius: var(--radius-xs);">
+              <span class="editorial-kicker">PATRON ACCESS</span>
+              <h3 class="font-display" style="font-size: 1.85rem; margin: 0.5rem 0 1rem;">Client Monograph Portal</h3>
+              <p class="editorial-lead" style="font-size: 0.875rem; margin-bottom: 2rem;">
+                Enter your registered patron credentials to inspect confidential site drawings, material provenance ledgers, and bespoke scheduling.
+              </p>
+
+              <form class="form-layout-grid" onsubmit="window.handleClientSignIn(event, this)">
+                <div class="form-field">
+                  <label for="signin-email">Patron Email *</label>
+                  <input type="email" id="signin-email" name="email" required placeholder="patron@domain.example">
+                </div>
+
+                <div class="form-field">
+                  <label for="signin-token">Access Token / Password *</label>
+                  <input type="password" id="signin-token" name="password" required placeholder="••••••••••••">
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.8125rem;">
+                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: var(--text-secondary);">
+                    <input type="checkbox" checked style="width: auto;">
+                    <span>Remember on this terminal</span>
+                  </label>
+                  <a href="#reset" style="color: var(--accent-curatorial); text-decoration: underline;" onclick="alert('In a production deployment, a reset link will be dispatched to your registered patron email.')">Forgotten pass?</a>
+                </div>
+
+                <div style="margin-top: 1rem;">
+                  <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                    Authenticate Session &rarr;
+                  </button>
+                </div>
+              </form>
             </div>
 
-            <!-- Partnerships -->
-            <div class="entry-row">
-              <div class="entry-icon icon-box-purple">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-              </div>
-              <div class="entry-data">
-                <span class="entry-label">Projects &amp; collaborations</span>
-                <a href="mailto:projects@atelier.example" class="entry-value">projects@atelier.example</a>
-              </div>
-            </div>
+            <!-- Active Authenticated Session Card (Shown when signed in) -->
+            <div id="signin-session-banner" style="display: none; background-color: var(--bg-surface-elevated); padding: 2.5rem; border: 1px solid var(--accent-curatorial); border-radius: var(--radius-xs); text-align: center;">
+              <span class="editorial-kicker" style="color: var(--accent-curatorial);">SESSION ACTIVE · VERIFIED PATRON</span>
+              <h3 class="font-display" style="font-size: 2rem; margin: 0.5rem 0 1rem;">Welcome to the Private Salon Vault</h3>
+              <p class="editorial-lead" style="font-size: 0.95rem; margin-bottom: 2rem;">
+                Authenticated as: <strong id="authenticated-user-display" style="color: var(--text-primary);">client@atelier.example</strong>
+              </p>
 
-            <!-- Phone -->
-            <div class="entry-row">
-              <div class="entry-icon icon-box-emerald">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; text-align: left; margin-bottom: 2rem;">
+                <div style="padding: 1rem; border: 1px solid var(--border-hairline); border-radius: var(--radius-xs);">
+                  <span class="font-mono text-xs text-muted">DOCUMENT VAULT</span>
+                  <div style="font-size: 0.875rem; font-weight: 600; margin-top: 0.25rem;">Active CAD Drawings (v4.2)</div>
+                </div>
+                <div style="padding: 1rem; border: 1px solid var(--border-hairline); border-radius: var(--radius-xs);">
+                  <span class="font-mono text-xs text-muted">MATERIAL LOG</span>
+                  <div style="font-size: 0.875rem; font-weight: 600; margin-top: 0.25rem;">Tuscan Travertine Spec Passed</div>
+                </div>
+                <div style="padding: 1rem; border: 1px solid var(--border-hairline); border-radius: var(--radius-xs);">
+                  <span class="font-mono text-xs text-muted">NEXT MILESTONE</span>
+                  <div style="font-size: 0.875rem; font-weight: 600; margin-top: 0.25rem;">On-Site Light Balance Tuning</div>
+                </div>
               </div>
-              <div class="entry-data">
-                <span class="entry-label">Direct conversation</span>
-                <span class="entry-value">Use the message form below</span>
-              </div>
-            </div>
 
-            <!-- Physical Location -->
-            <div class="entry-row">
-              <div class="entry-icon icon-box-rose">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-              </div>
-              <div class="entry-data">
-                <span class="entry-label">Studio location</span>
-                <span class="entry-value">Online studio<br>Working wherever the project lives</span>
-              </div>
-            </div>
-
-            <!-- Operational Hours -->
-            <div class="entry-row">
-              <div class="entry-icon icon-box-amber">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-              </div>
-              <div class="entry-data">
-                <span class="entry-label">Reply window</span>
-                <span class="entry-value">Usually within one working day</span>
-              </div>
+              <button type="button" class="btn btn-outline btn-sm" onclick="window.handleClientSignOut()">
+                Terminate Patron Session (Sign Out)
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- Contact Form Card -->
-        <div class="card contact-form-card">
-          <h2 class="contact-card-title">Send a note</h2>
-          <p class="contact-card-sub">Tell us what you need, what you already have, and what you would like the finished experience to feel like.</p>
+        <!-- Right Side: Direct Studio Directory -->
+        <div>
+          <div style="background-color: var(--bg-surface); padding: 2.5rem; border: 1px solid var(--border-hairline); border-radius: var(--radius-xs); display: flex; flex-direction: column; gap: 2rem;">
+            <div>
+              <span class="font-mono text-xs text-muted">DIRECT INQUIRIES</span>
+              <h3 class="font-display" style="font-size: 1.6rem; margin-top: 0.4rem;">Concierge &amp; Archives</h3>
+              <p class="editorial-caption" style="margin-top: 0.5rem;">
+                For confidential commissions, international press requests, or private showroom viewings.
+              </p>
+            </div>
 
-          <form id="contact-form" class="contact-form" onsubmit="event.preventDefault(); window.handleContactSubmit(this);">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="contact-name">Your name *</label>
-                <input type="text" id="contact-name" name="name" required placeholder="Jane Doe">
+            <div style="display: flex; flex-direction: column; gap: 1.5rem; border-top: 1px solid var(--border-hairline); padding-top: 1.5rem;">
+              <div>
+                <span class="font-mono text-xs text-muted">EMAIL DIRECT:</span>
+                <a href="mailto:concierge@atelier.example" style="font-size: 1rem; display: block; color: var(--accent-curatorial); font-weight: 600; margin-top: 0.25rem;">
+                  concierge@atelier.example
+                </a>
               </div>
-              <div class="form-group">
-                <label for="contact-email">Your email *</label>
-                <input type="email" id="contact-email" name="email" required placeholder="jane@example.com">
+
+              <div>
+                <span class="font-mono text-xs text-muted">PRESS &amp; MONOGRAPHS:</span>
+                <a href="mailto:curator@atelier.example" style="font-size: 1rem; display: block; color: var(--text-primary); margin-top: 0.25rem;">
+                  curator@atelier.example
+                </a>
+              </div>
+
+              <div>
+                <span class="font-mono text-xs text-muted">PRIVATE SALON SESSIONS:</span>
+                <p class="editorial-caption" style="margin-top: 0.25rem;">
+                  Milan · Kyoto · Paris · Zurich<br>
+                  By verified appointment only.
+                </p>
+              </div>
+
+              <div>
+                <span class="font-mono text-xs text-muted">CADENCE GUARANTEE:</span>
+                <p class="editorial-caption" style="margin-top: 0.25rem;">
+                  Direct partner response guaranteed within 24 business hours.
+                </p>
               </div>
             </div>
-
-            <div class="form-group">
-              <label for="contact-department">What is this about?</label>
-              <input type="text" id="contact-department" name="department" placeholder="Technical Support, Sales, or General">
-            </div>
-
-            <div class="form-group">
-              <label for="contact-message">Your message *</label>
-              <textarea id="contact-message" name="message" rows="5" required placeholder="How can we assist you with your project?"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="width: 100%;">
-              Send message
-            </button>
-          </form>
-
-          <div id="contact-success-box" class="contact-success-box" style="display: none;">
-            <div class="success-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-            </div>
-            <h4>Message received</h4>
-            <p>Thanks for the note. In a real deployment, this is where you would confirm delivery and explain when the next reply should arrive.</p>
-            <button type="button" class="btn btn-secondary btn-sm" onclick="window.resetContactForm()">Submit Another Message</button>
           </div>
         </div>
       </div>
@@ -255,106 +359,150 @@
   </section>
 
   <!-- ==========================================================================
-       FREQUENTLY ASKED QUESTIONS (FAQ)
+       SECTION 2: FREQUENTLY ASKED QUESTIONS (FAQ ACCORDION)
        ========================================================================== -->
-  <section class="section" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+  <section class="section section-border-bottom bg-surface">
     <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">A few useful answers</span>
-        <h2 class="section-title">Before you press send.</h2>
-        <p class="section-subtitle">These answers are written for the template itself. Replace them with the questions your own customers actually ask.</p>
+      <div class="section-header-editorial split">
+        <div>
+          <div class="editorial-kicker">
+            <span class="editorial-kicker-dot"></span>
+            <span>Guidance &amp; Answers</span>
+          </div>
+          <h2 class="editorial-title-section">Customization &amp; commissioning guidance.</h2>
+        </div>
+        <p class="editorial-caption">
+          Practical notes for developers, designers, and clients adapting this template.
+        </p>
       </div>
 
-      <div class="faq-list">
+      <div class="editorial-row-list">
         <!-- FAQ 1 -->
-        <div class="faq-item">
-          <button type="button" class="faq-question">Can I change the words without changing the visual structure? +</button>
-          <div class="faq-answer">
-            Yes! All styling is powered by CSS custom properties in <code>style.css</code> under the <code>:root</code> selector. Simply update <code>--color-primary</code>, <code>--color-accent</code>, or <code>--bg-surface</code>, and the changes will instantly reflect across every page.
+        <div class="editorial-row-item active">
+          <button type="button" class="editorial-row-trigger" aria-expanded="true">
+            <span class="editorial-row-num">01</span>
+            <span class="editorial-row-title">How do I adapt this template for my restaurant, hotel, or architectural studio?</span>
+            <span class="editorial-row-icon">+</span>
+          </button>
+          <div class="editorial-row-drawer">
+            <div class="editorial-row-drawer-inner">
+              <p class="editorial-lead" style="font-size: 0.95rem;">
+                All brand identity, section titles, photography slots, and typography tokens are fully modular. Simply replace the imagery references in the HTML files and adjust the color palette custom properties in <code>style.css</code> to match your brand palette.
+              </p>
+            </div>
           </div>
         </div>
 
         <!-- FAQ 2 -->
-        <div class="faq-item">
-          <button type="button" class="faq-question">Can I add, remove, or rename pages as the business grows? +</button>
-          <div class="faq-answer">
-            To create a new page, simply create an HTML file (e.g., <code>pricing.html</code>), link it in <code>vite.config.ts</code> under <code>rollupOptions.input</code>, and add it to the navigation list in each header.
+        <div class="editorial-row-item">
+          <button type="button" class="editorial-row-trigger" aria-expanded="false">
+            <span class="editorial-row-num">02</span>
+            <span class="editorial-row-title">Does the client authentication portal connect to real backends?</span>
+            <span class="editorial-row-icon">+</span>
+          </button>
+          <div class="editorial-row-drawer">
+            <div class="editorial-row-drawer-inner">
+              <p class="editorial-lead" style="font-size: 0.95rem;">
+                Yes. The authentication form in <code>contact.html</code> and <code>script.js</code> is engineered with persistent local session management and form handlers. It is pre-architected to seamlessly hook into Firebase Auth, Supabase, OAuth, or custom REST API endpoints.
+              </p>
+            </div>
           </div>
         </div>
 
         <!-- FAQ 3 -->
-        <div class="faq-item">
-          <button type="button" class="faq-question">Can the same idea work for a restaurant, studio, shop, or service business? +</button>
-          <div class="faq-answer">
-            No. The entire site is engineered with zero external client runtime libraries. The mobile menu, sticky header, accordions, and lightbox all run on lightweight, standards-compliant vanilla JavaScript.
+        <div class="editorial-row-item">
+          <button type="button" class="editorial-row-trigger" aria-expanded="false">
+            <span class="editorial-row-num">03</span>
+            <span class="editorial-row-title">Why does Atelier avoid traditional card grids and pill badges?</span>
+            <span class="editorial-row-icon">+</span>
+          </button>
+          <div class="editorial-row-drawer">
+            <div class="editorial-row-drawer-inner">
+              <p class="editorial-lead" style="font-size: 0.95rem;">
+                Generic SaaS dashboards rely heavily on repetitive rounded cards with colored pill tags on top. Atelier employs museum-grade editorial layouts, asymmetric reading columns, hairline dividers, and unboxed metadata separated by middots (·) to project authenticity and poise.
+              </p>
+            </div>
           </div>
         </div>
 
         <!-- FAQ 4 -->
-        <div class="faq-item">
-          <button type="button" class="faq-question">Can I keep the navigation simple on smaller screens? +</button>
-          <div class="faq-answer">
-            Yes. The mobile hamburger drawer automatically activates on screens below 768px, complete with accessible ARIA expansion states and touch-friendly click zones.
+        <div class="editorial-row-item">
+          <button type="button" class="editorial-row-trigger" aria-expanded="false">
+            <span class="editorial-row-num">04</span>
+            <span class="editorial-row-title">How is dark mode and light mode handled without flashing wrong colors?</span>
+            <span class="editorial-row-icon">+</span>
+          </button>
+          <div class="editorial-row-drawer">
+            <div class="editorial-row-drawer-inner">
+              <p class="editorial-lead" style="font-size: 0.95rem;">
+                An inline execution script in the <code>&lt;head&gt;</code> reads the user's stored preference from <code>localStorage</code> (or OS system setting) and immediately applies the <code>data-theme</code> attribute to the <code>&lt;html&gt;</code> element before any CSS rendering starts, completely eliminating Flash of Unstyled Content (FOUC).
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       SITE FOOTER
-       ========================================================================== -->
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer-container">
-      <div class="footer-col brand-col">
-        <a href="index.html" class="brand-logo footer-logo">
-          <span class="brand-symbol">◈</span>
-          <span class="brand-name">Atelier</span>
-        </a>
-        <p class="footer-desc">
-          An editorial multi-page concept for businesses that want their website to feel clear, warm, useful, and unmistakably their own.
-        </p>
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-monogram">
+          <span class="footer-brand-title">Atelier</span>
+          <p class="editorial-caption" style="max-width: 32ch;">
+            An adaptable digital template crafted for studios, hospitality sanctums, and architects seeking poise over acceleration.
+          </p>
+          <div style="margin-top: 0.5rem;">
+            <span class="font-mono text-xs text-muted">DIRECT CONCIERGE:</span>
+            <a href="mailto:concierge@atelier.example" style="font-size: 0.8125rem; display: block; color: var(--accent-curatorial);">concierge@atelier.example</a>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Directory</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="overview.html">Get Started Overview</a></li>
+            <li><a href="features.html">Specifications &amp; Features</a></li>
+            <li><a href="about.html">Studio Monograph</a></li>
+            <li><a href="showcase.html">Selected Showcase</a></li>
+            <li><a href="testimonials.html">Letters of Patronage</a></li>
+            <li><a href="contact.html">Inquiries &amp; Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Capabilities</h4>
+          <ul class="footer-links-list">
+            <li><a href="features.html">Spatial Staging</a></li>
+            <li><a href="features.html">Bespoke Furnishings</a></li>
+            <li><a href="features.html">Digital Monograph</a></li>
+            <li><a href="features.html">Cellar &amp; Dining Direction</a></li>
+            <li><a href="contact.html#signin">Client Access Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Salons</h4>
+          <ul class="footer-links-list">
+            <li><span>Milan — Via Brera 18</span></li>
+            <li><span>Kyoto — Higashiyama-ku</span></li>
+            <li><span>Paris — Rue de Turenne</span></li>
+            <li><span>Zurich — Limmatquai</span></li>
+          </ul>
+        </div>
       </div>
 
-      <div class="footer-col">
-        <h4 class="footer-col-title">Pages</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="overview.html">Get Started Overview</a></li>
-          <li><a href="features.html">Features</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="showcase.html">Showcase</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+      <div class="footer-large-wordmark-strip" aria-hidden="true">
+        <span>ATELIER</span>
       </div>
 
-      <div class="footer-col">
-        <h4 class="footer-col-title">Resources</h4>
-        <ul class="footer-links">
-          <li><a href="about.html">Documentation</a></li>
-          <li><a href="features.html">Component Library</a></li>
-          <li><a href="showcase.html">Design System</a></li>
-          <li><a href="contact.html">Support Desk</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-col-title">Legal</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Privacy Policy</a></li>
-          <li><a href="index.html">Terms of Service</a></li>
-          <li><a href="index.html">Security Standards</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <p>&copy; <span class="current-year">2026</span> Atelier Studio. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="index.html">Privacy</a>
-          <a href="index.html">Terms</a>
+      <div class="footer-bottom-row">
+        <span>© <span class="current-year">2026</span> Atelier Monograph. Reusable Editorial Architecture.</span>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="overview.html">Overview Map</a>
+          <a href="contact.html#signin">Sign In</a>
           <a href="contact.html">Contact</a>
         </div>
       </div>

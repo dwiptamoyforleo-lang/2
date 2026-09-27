@@ -1,23 +1,27 @@
 /**
- * Modern Website Multi-Page JavaScript
- * Handles navigation states, theme toggle (dark/light), mobile menu, FAQ accordions, filters, lightboxes, and forms.
+ * ATELIER — REUSABLE EDITORIAL JAVASCRIPT ENGINE
+ * Handles dual-theme toggle (Light/Dark/System), editorial drawer navigation,
+ * capability accordions, gallery filter tabs, modal lightbox, client sign-in portal,
+ * patron quote switcher, scroll indicators, and form interactions.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initStickyHeader();
-  initMobileMenu();
+  initEditorialDrawer();
   initActiveNavLink();
+  initCapabilityAccordion();
+  initGalleryFilters();
   initLightbox();
-  initFaqAccordion();
-  initFilterBar();
+  initPatronSwitcher();
+  initContactAndAuthTabs();
   initDynamicYear();
   initScrollReveal();
   initScrollProgressBar();
 });
 
 /* ==========================================================================
-   1. THEME SELECTOR & DROPDOWN (LIGHT, DARK, SYSTEM DEFAULT)
+   1. THEME SELECTOR & DUAL PALETTE ENGINE (LIGHT, DARK, SYSTEM)
    ========================================================================== */
 const THEME_ICONS = {
   light: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`,
@@ -45,7 +49,7 @@ function applyThemePreference(preference) {
     span.innerHTML = THEME_ICONS[preference] || THEME_ICONS[actualTheme] || THEME_ICONS.dark;
   });
 
-  // Update active status on dropdown options
+  // Update active status in dropdown
   const dropdownItems = document.querySelectorAll('.theme-dropdown-item');
   dropdownItems.forEach(item => {
     if (item.getAttribute('data-theme-value') === preference) {
@@ -60,7 +64,6 @@ function initThemeToggle() {
   const savedPref = localStorage.getItem('site-theme-preference') || localStorage.getItem('site-theme') || 'dark';
   applyThemePreference(savedPref);
 
-  // Listen to OS theme changes if user has 'system default' selected
   if (window.matchMedia) {
     window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
       const currentPref = localStorage.getItem('site-theme-preference') || 'dark';
@@ -70,7 +73,6 @@ function initThemeToggle() {
     });
   }
 
-  // Handle dropdown toggle buttons
   const selectors = document.querySelectorAll('.theme-selector');
   selectors.forEach(selector => {
     const toggleBtn = selector.querySelector('.theme-toggle-btn');
@@ -81,7 +83,6 @@ function initThemeToggle() {
       e.stopPropagation();
       const isOpen = dropdown.classList.contains('open');
 
-      // Close all other open dropdowns
       document.querySelectorAll('.theme-dropdown.open').forEach(d => {
         d.classList.remove('open');
         d.closest('.theme-selector')?.querySelector('.theme-toggle-btn')?.setAttribute('aria-expanded', 'false');
@@ -105,7 +106,6 @@ function initThemeToggle() {
     });
   });
 
-  // Close dropdown on outside click
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.theme-selector')) {
       document.querySelectorAll('.theme-dropdown.open').forEach(d => {
@@ -115,7 +115,6 @@ function initThemeToggle() {
     }
   });
 
-  // Close dropdown on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       document.querySelectorAll('.theme-dropdown.open').forEach(d => {
@@ -130,13 +129,15 @@ function initThemeToggle() {
    2. STICKY HEADER ELEVATION
    ========================================================================== */
 function initStickyHeader() {
-  const header = document.getElementById('site-header');
+  const header = document.querySelector('.site-header');
   if (!header) return;
 
   const handleScroll = () => {
-    if (window.scrollY > 20) {
-      header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+    if (window.scrollY > 25) {
+      header.style.borderBottomColor = 'var(--border-medium)';
+      header.style.boxShadow = 'var(--shadow-subtle)';
     } else {
+      header.style.borderBottomColor = 'var(--border-hairline)';
       header.style.boxShadow = 'none';
     }
   };
@@ -145,160 +146,93 @@ function initStickyHeader() {
 }
 
 /* ==========================================================================
-   3. MOBILE MENU DRAWER
+   3. EDITORIAL SLIDE-OUT DRAWER NAVIGATION
    ========================================================================== */
-function initMobileMenu() {
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const drawer = document.getElementById('mobile-nav-drawer');
-  if (!menuBtn || !drawer) return;
+function initEditorialDrawer() {
+  const triggerBtn = document.getElementById('editorial-menu-trigger');
+  const drawer = document.getElementById('editorial-drawer');
+  const backdrop = document.getElementById('drawer-backdrop');
+  const closeBtn = document.getElementById('drawer-close-btn');
 
-  const toggleMenu = () => {
-    const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-    menuBtn.setAttribute('aria-expanded', String(!isExpanded));
-    drawer.classList.toggle('active');
-    drawer.setAttribute('aria-hidden', String(isExpanded));
+  if (!triggerBtn || !drawer) return;
+
+  const openDrawer = () => {
+    drawer.classList.add('active');
+    drawer.setAttribute('aria-hidden', 'false');
+    triggerBtn.setAttribute('aria-expanded', 'true');
+    if (backdrop) backdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
   };
 
-  menuBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    toggleMenu();
-  });
+  const closeDrawer = () => {
+    drawer.classList.remove('active');
+    drawer.setAttribute('aria-hidden', 'true');
+    triggerBtn.setAttribute('aria-expanded', 'false');
+    if (backdrop) backdrop.classList.remove('active');
+    document.body.style.overflow = '';
+  };
 
-  // Close the menu when the user clicks anywhere outside the navigation.
-  // Clicking the three-line button again still toggles it normally.
-  document.addEventListener('click', (e) => {
-    if (!drawer.classList.contains('active')) return;
-    if (!drawer.contains(e.target) && !menuBtn.contains(e.target)) {
-      menuBtn.setAttribute('aria-expanded', 'false');
-      drawer.classList.remove('active');
-      drawer.setAttribute('aria-hidden', 'true');
+  triggerBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (drawer.classList.contains('active')) {
+      closeDrawer();
+    } else {
+      openDrawer();
     }
   });
 
-  // Close with Escape for keyboard users.
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeDrawer);
+  }
+
+  if (backdrop) {
+    backdrop.addEventListener('click', closeDrawer);
+  }
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && drawer.classList.contains('active')) {
-      menuBtn.setAttribute('aria-expanded', 'false');
-      drawer.classList.remove('active');
-      drawer.setAttribute('aria-hidden', 'true');
-      menuBtn.focus();
+      closeDrawer();
+      triggerBtn.focus();
     }
   });
-
-  // Keep normal page-link navigation working. The destination page will
-  // initialize its own menu in the closed state.
 }
 
 /* ==========================================================================
-   4. MULTI-PAGE ACTIVE NAV LINK
+   4. ACTIVE NAV LINK DETECTION
    ========================================================================== */
 function initActiveNavLink() {
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('.desktop-nav .nav-link, .mobile-nav-links .mobile-nav-link');
+  const navLinks = document.querySelectorAll('.desktop-nav .nav-link, .drawer-nav-item .drawer-nav-link');
 
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPath || (currentPath === '' && href === 'index.html') || (currentPath === 'index.html' && (href === 'index.html' || href === '/'))) {
+    if (
+      href === currentPath ||
+      (currentPath === '' && href === 'index.html') ||
+      (currentPath === 'index.html' && (href === 'index.html' || href === '/'))
+    ) {
       link.classList.add('active');
     }
   });
 }
 
 /* ==========================================================================
-   5. LIGHTBOX / MODAL CONTROLLER
+   5. EDITORIAL CAPABILITIES ACCORDION (NUMBERED ROWS)
    ========================================================================== */
-const CUSTOM_MODAL_ICONS = {
-  speed: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>`,
-  analytics: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line><path d="M4 20h16"></path></svg>`,
-  mobile: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>`,
-  cloud: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>`,
-  finance: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>`,
-  ecommerce: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>`,
-  security: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>`,
-  standards: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>`,
-  design: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5"></circle><circle cx="17.5" cy="10.5" r=".5"></circle><circle cx="8.5" cy="7.5" r=".5"></circle><circle cx="6.5" cy="12.5" r=".5"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></svg>`,
-  collaboration: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`,
-  default: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line><path d="M4 20h16"></path></svg>`
-};
+function initCapabilityAccordion() {
+  const items = document.querySelectorAll('.editorial-row-item');
+  if (!items.length) return;
 
-function initLightbox() {
-  const modal = document.getElementById('lightbox-modal');
-  const modalTitle = document.getElementById('lightbox-title');
-  const modalCaption = document.getElementById('lightbox-caption');
-  const modalIcon = document.getElementById('lightbox-icon');
-  const closeBtn = document.getElementById('lightbox-close');
-  if (!modal) return;
+  items.forEach(item => {
+    const trigger = item.querySelector('.editorial-row-trigger');
+    if (!trigger) return;
 
-  const triggers = document.querySelectorAll('[data-lightbox]');
-
-  const openModal = (title, desc, icon) => {
-    if (modalTitle) modalTitle.textContent = title;
-    if (modalCaption) modalCaption.textContent = desc;
-    if (modalIcon) {
-      if (icon && icon.trim().startsWith('<svg')) {
-        modalIcon.innerHTML = icon;
-      } else if (icon && CUSTOM_MODAL_ICONS[icon]) {
-        modalIcon.innerHTML = CUSTOM_MODAL_ICONS[icon];
-      } else {
-        modalIcon.innerHTML = CUSTOM_MODAL_ICONS['default'];
-      }
-    }
-    modal.classList.add('active');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeModal = () => {
-    modal.classList.remove('active');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  };
-
-  triggers.forEach(trigger => {
     trigger.addEventListener('click', () => {
-      const title = trigger.getAttribute('data-title') || 'Feature Preview';
-      const desc = trigger.getAttribute('data-desc') || 'Expanded view of the selected component.';
-      const icon = trigger.getAttribute('data-icon') || 'analytics';
-      openModal(title, desc, icon);
-    });
-  });
+      const isAlreadyActive = item.classList.contains('active');
 
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeModal);
-  }
+      items.forEach(other => other.classList.remove('active'));
 
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      closeModal();
-    }
-  });
-}
-
-/* ==========================================================================
-   6. FAQ ACCORDION TOGGLE
-   ========================================================================== */
-function initFaqAccordion() {
-  const faqItems = document.querySelectorAll('.faq-item');
-  if (!faqItems.length) return;
-
-  faqItems.forEach(item => {
-    const questionBtn = item.querySelector('.faq-question');
-    if (!questionBtn) return;
-
-    questionBtn.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-
-      // Close all open items
-      faqItems.forEach(otherItem => otherItem.classList.remove('active'));
-
-      // Toggle clicked item
-      if (!isActive) {
+      if (!isAlreadyActive) {
         item.classList.add('active');
       }
     });
@@ -306,26 +240,27 @@ function initFaqAccordion() {
 }
 
 /* ==========================================================================
-   7. SHOWCASE FILTER BAR
+   6. SHOWCASE GALLERY FILTER BAR
    ========================================================================== */
-function initFilterBar() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.showcase-card[data-category]');
-  if (!filterBtns.length || !cards.length) return;
+function initGalleryFilters() {
+  const buttons = document.querySelectorAll('.gallery-filter-btn');
+  const plates = document.querySelectorAll('.gallery-plate[data-category]');
 
-  filterBtns.forEach(btn => {
+  if (!buttons.length || !plates.length) return;
+
+  buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+      buttons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      const filterVal = btn.getAttribute('data-filter');
+      const filterCategory = btn.getAttribute('data-filter');
 
-      cards.forEach(card => {
-        const cardCat = card.getAttribute('data-category');
-        if (filterVal === 'all' || cardCat === filterVal) {
-          card.style.display = 'flex';
+      plates.forEach(plate => {
+        const plateCat = plate.getAttribute('data-category');
+        if (filterCategory === 'all' || plateCat === filterCategory) {
+          plate.style.display = 'flex';
         } else {
-          card.style.display = 'none';
+          plate.style.display = 'none';
         }
       });
     });
@@ -333,114 +268,285 @@ function initFilterBar() {
 }
 
 /* ==========================================================================
-   8. CONTACT FORM SUBMISSION
+   7. MODAL LIGHTBOX / MONOGRAPH INSPECTOR
    ========================================================================== */
-window.handleContactSubmit = function(form) {
-  const formCard = document.getElementById('contact-form');
-  const successBox = document.getElementById('contact-success-box');
-  if (formCard && successBox) {
-    formCard.style.display = 'none';
-    successBox.style.display = 'block';
-  }
-};
+function initLightbox() {
+  const modal = document.getElementById('lightbox-modal');
+  const modalImg = document.getElementById('lightbox-image');
+  const modalTitle = document.getElementById('lightbox-title');
+  const modalDesc = document.getElementById('lightbox-desc');
+  const modalMeta = document.getElementById('lightbox-meta');
+  const closeBtn = document.getElementById('lightbox-close-btn');
 
-window.resetContactForm = function() {
-  const formCard = document.getElementById('contact-form');
-  const successBox = document.getElementById('contact-success-box');
-  if (formCard && successBox) {
-    formCard.reset();
-    formCard.style.display = 'flex';
-    successBox.style.display = 'none';
-  }
-};
+  if (!modal) return;
 
-/* ==========================================================================
-   9. DYNAMIC COPYRIGHT YEAR
-   ========================================================================== */
-function initDynamicYear() {
-  const yearEls = document.querySelectorAll('.current-year, #current-year');
-  const yearStr = new Date().getFullYear().toString();
-  yearEls.forEach(el => {
-    el.textContent = yearStr;
+  const openLightbox = (src, title, desc, meta) => {
+    if (modalImg) modalImg.src = src;
+    if (modalTitle) modalTitle.textContent = title || 'Curated Plate';
+    if (modalDesc) modalDesc.textContent = desc || 'Editorial study from the Atelier archive.';
+    if (modalMeta) modalMeta.textContent = meta || 'ARCHIVE MONOGRAPH';
+
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  const triggers = document.querySelectorAll('[data-lightbox-trigger]');
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const src = trigger.getAttribute('data-image-src') || trigger.querySelector('img')?.src;
+      const title = trigger.getAttribute('data-plate-title') || 'Archival Study';
+      const desc = trigger.getAttribute('data-plate-desc') || 'Monograph study on space and material proportion.';
+      const meta = trigger.getAttribute('data-plate-meta') || 'PLATE SPECIFICATION';
+      if (src) {
+        openLightbox(src, title, desc, meta);
+      }
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeLightbox);
+  }
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeLightbox();
+    }
   });
 }
 
 /* ==========================================================================
-   10. SCROLL REVEAL (INTERSECTION OBSERVER)
+   8. EDITORIAL PATRON / TESTIMONIAL QUOTE SWITCHER
+   ========================================================================== */
+const PATRON_DATA = [
+  {
+    quote: "“Working with Atelier felt like stepping into an architectural conversation rather than a software project. Every detail, from typographic cadence to material restraint, gave our studio an undeniable presence.”",
+    author: "Elena Vasari",
+    role: "Founding Partner, Vasari & Morales Architects · Milan",
+    meta: "COMMISSION: MONOGRAPH & DIGITAL PAVILION"
+  },
+  {
+    quote: "“Our guests don't just visit our dining room; they experience a complete narrative from the very first interaction. Atelier understood how to express quiet luxury without a single hollow gimmick.”",
+    author: "Julien Mercier",
+    role: "Head Sommelier & Patron, Maison L'Hiver · Bordeaux",
+    meta: "COMMISSION: HOSPITALITY SANCTUM & CELLAR ARCHIVE"
+  },
+  {
+    quote: "“In an era drowned in hyperactive SaaS dashboards, Atelier proved that poise, thoughtful whitespace, and architectural weight are the highest forms of credibility.”",
+    author: "Sora Takahashi",
+    role: "Creative Director, Studio Kura Objects · Kyoto",
+    meta: "COMMISSION: OBJECT EDITIONS & SCULPTURAL IDENTITY"
+  }
+];
+
+function initPatronSwitcher() {
+  const buttons = document.querySelectorAll('.patron-selector-btn');
+  const quoteEl = document.getElementById('patron-quote-pull');
+  const authorEl = document.getElementById('patron-author');
+  const roleEl = document.getElementById('patron-role');
+  const metaEl = document.getElementById('patron-meta');
+
+  if (!buttons.length || !quoteEl) return;
+
+  buttons.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const data = PATRON_DATA[index];
+      if (data) {
+        quoteEl.style.opacity = '0';
+        setTimeout(() => {
+          quoteEl.textContent = data.quote;
+          if (authorEl) authorEl.textContent = data.author;
+          if (roleEl) roleEl.textContent = data.role;
+          if (metaEl) metaEl.textContent = data.meta;
+          quoteEl.style.opacity = '1';
+        }, 150);
+      }
+    });
+  });
+}
+
+/* ==========================================================================
+   9. CONTACT INQUIRY & CLIENT SIGN-IN PORTAL TABS
+   ========================================================================== */
+function initContactAndAuthTabs() {
+  const tabs = document.querySelectorAll('.portal-tab-btn');
+  const inquirySection = document.getElementById('inquiry-panel');
+  const signinSection = document.getElementById('signin-panel');
+
+  if (tabs.length && inquirySection && signinSection) {
+    const activateTab = (targetTab) => {
+      tabs.forEach(t => t.classList.remove('active'));
+      if (targetTab === 'signin') {
+        const signinBtn = document.querySelector('[data-portal-tab="signin"]');
+        if (signinBtn) signinBtn.classList.add('active');
+        inquirySection.style.display = 'none';
+        signinSection.style.display = 'block';
+      } else {
+        const inquiryBtn = document.querySelector('[data-portal-tab="inquiry"]');
+        if (inquiryBtn) inquiryBtn.classList.add('active');
+        inquirySection.style.display = 'block';
+        signinSection.style.display = 'none';
+      }
+    };
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-portal-tab');
+        activateTab(target);
+      });
+    });
+
+    // Check URL hash (#signin or direct link)
+    if (window.location.hash === '#signin') {
+      activateTab('signin');
+    }
+  }
+
+  // Inquiry Form Handler
+  window.handleInquirySubmit = function(event, form) {
+    if (event) event.preventDefault();
+    const successBox = document.getElementById('inquiry-success-box');
+    if (form && successBox) {
+      form.style.display = 'none';
+      successBox.style.display = 'block';
+    }
+  };
+
+  window.resetInquiryForm = function() {
+    const form = document.getElementById('inquiry-form');
+    const successBox = document.getElementById('inquiry-success-box');
+    if (form && successBox) {
+      form.reset();
+      form.style.display = 'block';
+      successBox.style.display = 'none';
+    }
+  };
+
+  // Client Sign-In Handler (Secondary & Primary Auth Portal)
+  window.handleClientSignIn = function(event, form) {
+    if (event) event.preventDefault();
+    const emailInput = form?.querySelector('input[type="email"]');
+    const emailVal = emailInput ? emailInput.value : 'client@atelier.example';
+    const formContainer = document.getElementById('signin-form-wrapper');
+    const sessionBanner = document.getElementById('signin-session-banner');
+    const userDisplay = document.getElementById('authenticated-user-display');
+
+    if (formContainer && sessionBanner) {
+      formContainer.style.display = 'none';
+      sessionBanner.style.display = 'block';
+      if (userDisplay) {
+        userDisplay.textContent = emailVal;
+      }
+      localStorage.setItem('atelier_client_session', JSON.stringify({
+        authenticated: true,
+        email: emailVal,
+        signedInAt: new Date().toISOString()
+      }));
+    }
+  };
+
+  window.handleClientSignOut = function() {
+    localStorage.removeItem('atelier_client_session');
+    const formContainer = document.getElementById('signin-form-wrapper');
+    const sessionBanner = document.getElementById('signin-session-banner');
+    if (formContainer && sessionBanner) {
+      formContainer.style.display = 'block';
+      sessionBanner.style.display = 'none';
+    }
+  };
+
+  // Restore authenticated state if present in storage
+  const savedSession = localStorage.getItem('atelier_client_session');
+  if (savedSession) {
+    try {
+      const parsed = JSON.parse(savedSession);
+      if (parsed && parsed.authenticated) {
+        const formContainer = document.getElementById('signin-form-wrapper');
+        const sessionBanner = document.getElementById('signin-session-banner');
+        const userDisplay = document.getElementById('authenticated-user-display');
+        if (formContainer && sessionBanner) {
+          formContainer.style.display = 'none';
+          sessionBanner.style.display = 'block';
+          if (userDisplay) userDisplay.textContent = parsed.email;
+        }
+      }
+    } catch {
+      // Ignore parse error
+    }
+  }
+}
+
+/* ==========================================================================
+   10. DYNAMIC COPYRIGHT YEAR
+   ========================================================================== */
+function initDynamicYear() {
+  const yearEls = document.querySelectorAll('.current-year, #current-year');
+  const currentYear = new Date().getFullYear().toString();
+  yearEls.forEach(el => {
+    el.textContent = currentYear;
+  });
+}
+
+/* ==========================================================================
+   11. SCROLL REVEAL (INTERSECTION OBSERVER)
    ========================================================================== */
 function initScrollReveal() {
   if (typeof IntersectionObserver === 'undefined') return;
 
-  // Select transition units across sections, cards, banners, and grids
   const targets = document.querySelectorAll(
-    '.section-header, .card, .action-card, .why-card, .split-content, .split-visual, .cta-banner, .table-wrapper, .faq-item, [data-reveal]'
+    '.section-header-editorial, .editorial-row-item, .gallery-plate, .featured-monograph-card, .editorial-quote-spread, .secondary-signin-portal, .immersive-cta-banner'
   );
 
   if (!targets.length) return;
 
   targets.forEach(el => {
-    el.classList.add('reveal');
-
-    // Add gentle stagger delay for cards inside responsive grids
-    if (el.classList.contains('card') && el.parentElement && el.parentElement.classList.contains('grid')) {
-      const cardsInGrid = Array.from(el.parentElement.children).filter(child => child.classList.contains('card'));
-      const indexInGrid = cardsInGrid.indexOf(el);
-      if (indexInGrid > 0) {
-        const delay = (indexInGrid % 3) * 0.12;
-        el.style.transitionDelay = `${delay}s`;
-      }
-    }
+    el.classList.add('reveal-init');
   });
 
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px 0px -40px 0px',
-    threshold: 0.08
-  };
-
-  const revealObserver = new IntersectionObserver((entries, observer) => {
+  const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        observer.unobserve(entry.target);
+        entry.target.classList.add('reveal-active');
+        obs.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -40px 0px'
+  });
 
-  targets.forEach(el => revealObserver.observe(el));
+  targets.forEach(el => observer.observe(el));
 }
 
 /* ==========================================================================
-   11. SCROLL PROGRESS BAR
+   12. SCROLL PROGRESS BAR
    ========================================================================== */
 function initScrollProgressBar() {
-  let progressContainer = document.querySelector('.scroll-progress-container');
-  let progressBar = document.querySelector('.scroll-progress-bar');
-
-  // If not already in DOM, create it dynamically
-  if (!progressContainer) {
-    progressContainer = document.createElement('div');
-    progressContainer.className = 'scroll-progress-container';
-    progressContainer.setAttribute('aria-hidden', 'true');
-    progressBar = document.createElement('div');
-    progressBar.className = 'scroll-progress-bar';
-    progressBar.id = 'scroll-progress-bar';
-    progressContainer.appendChild(progressBar);
-    document.body.prepend(progressContainer);
-  } else if (!progressBar) {
-    progressBar = progressContainer.querySelector('.scroll-progress-bar');
-  }
+  const progressBar = document.getElementById('scroll-progress-bar');
+  if (!progressBar) return;
 
   let ticking = false;
 
   const updateProgress = () => {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-    const clampedProgress = Math.min(100, Math.max(0, progress));
-    if (progressBar) {
-      progressBar.style.width = `${clampedProgress}%`;
-    }
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
     ticking = false;
   };
 
@@ -451,7 +557,5 @@ function initScrollProgressBar() {
     }
   }, { passive: true });
 
-  window.addEventListener('resize', updateProgress, { passive: true });
   updateProgress();
 }
-

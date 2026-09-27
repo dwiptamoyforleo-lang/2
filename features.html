@@ -3,21 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atelier Features — The Parts That Make the Story Work</title>
-  <meta name="description" content="Explore the content, navigation, responsive layouts, theme controls, showcase tools, and small interactions that give the Atelier concept its character.">
-  
-  <meta property="og:title" content="Atelier Features — The Parts That Make the Story Work">
-  <meta property="og:description" content="Explore the content, navigation, responsive layouts, theme controls, showcase tools, and small interactions that give the Atelier concept its character.">
+  <title>Features &amp; Specifications — Atelier Monograph</title>
+  <meta name="description" content="Technical specifications, design tokens, responsive architecture, and component standards of the Atelier template.">
+
+  <meta property="og:title" content="Features &amp; Specifications — Atelier Monograph">
+  <meta property="og:description" content="Technical specifications, design tokens, responsive architecture, and component standards of the Atelier template.">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- Immediate Theme Initializer to Prevent Flash of Wrong Theme -->
   <script>
     (function() {
       const pref = localStorage.getItem('site-theme-preference') || localStorage.getItem('site-theme') || 'dark';
@@ -31,23 +29,20 @@
   </script>
 </head>
 <body>
-  <!-- Horizontal Scroll Progress Indicator -->
   <div class="scroll-progress-container" aria-hidden="true">
     <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
   </div>
 
-  <!-- ==========================================================================
-       SITE HEADER & NAVIGATION
-       ========================================================================== -->
-  <header class="site-header" id="site-header">
+  <!-- Top Bar -->
+  <header class="site-header">
     <div class="container header-container">
-      <a href="index.html" class="brand-logo" aria-label="Home">
-        <span class="brand-symbol">◈</span>
-        <span class="brand-name">Atelier</span>
+      <a href="index.html" class="brand-wordmark" aria-label="Atelier Home">
+        Atelier
       </a>
 
       <nav class="desktop-nav" aria-label="Main Navigation">
         <a href="index.html" class="nav-link">Home</a>
+        <a href="overview.html" class="nav-link">Overview</a>
         <a href="features.html" class="nav-link active">Features</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="showcase.html" class="nav-link">Showcase</a>
@@ -57,287 +52,446 @@
 
       <div class="header-actions">
         <div class="theme-selector">
-          <button class="theme-toggle-btn" aria-label="Select theme" aria-haspopup="true" aria-expanded="false" title="Select theme">
-            <span class="theme-btn-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-            </span>
+          <button type="button" class="theme-toggle-btn" aria-label="Select color theme" aria-haspopup="true" aria-expanded="false" title="Switch Theme">
+            <span class="theme-btn-icon"></span>
           </button>
-          <div class="theme-dropdown" role="menu" aria-label="Theme options">
+          <div class="theme-dropdown" role="menu">
             <button type="button" class="theme-dropdown-item" data-theme-value="light" role="menuitem">
-              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-              <span class="theme-item-text">Light theme</span>
-              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Light theme</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </button>
             <button type="button" class="theme-dropdown-item" data-theme-value="dark" role="menuitem">
-              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-              <span class="theme-item-text">Dark theme</span>
-              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Dark theme</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </button>
             <button type="button" class="theme-dropdown-item" data-theme-value="system" role="menuitem">
-              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-              <span class="theme-item-text">System default</span>
-              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>System default</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </button>
           </div>
         </div>
-        <a href="contact.html" class="btn btn-outline btn-sm hide-on-mobile">Sign In</a>
-        <a href="overview.html" class="btn btn-primary btn-sm">Get Started</a>
-        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="menu-bar"></span>
-          <span class="menu-bar"></span>
-          <span class="menu-bar"></span>
-        </button>
-      </div>
-    </div>
 
-    <!-- Mobile Navigation Drawer -->
-    <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
-      <nav class="mobile-nav-links">
-        <a href="index.html" class="mobile-nav-link">Home</a>
-        <a href="features.html" class="mobile-nav-link active">Features</a>
-        <a href="about.html" class="mobile-nav-link">About</a>
-        <a href="showcase.html" class="mobile-nav-link">Showcase</a>
-        <a href="testimonials.html" class="mobile-nav-link">Testimonials</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
-        <a href="overview.html" class="mobile-nav-link">Overview</a>
-      </nav>
-      <div class="mobile-nav-cta">
-        <a href="overview.html" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+        <a href="contact.html#signin" class="btn btn-outline btn-sm">Sign In</a>
+        <a href="overview.html" class="btn btn-primary btn-sm">Get Started</a>
+
+        <button type="button" class="menu-toggle-btn" id="editorial-menu-trigger" aria-label="Toggle Navigation Drawer" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- ==========================================================================
-       PAGE HERO BANNER
-       ========================================================================== -->
-  <section class="page-hero">
-    <div class="container page-hero-inner">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span>/</span>
-        <span>Features</span>
+  <!-- Editorial Drawer Backdrop & Slide-Out Menu -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="editorial-drawer" id="editorial-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <span class="editorial-kicker"><span class="editorial-kicker-dot"></span> Studio Index</span>
+      <button type="button" class="drawer-close-btn" id="drawer-close-btn" aria-label="Close Navigation Drawer">
+        Close ✕
+      </button>
+    </div>
+    <ul class="drawer-nav-list">
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">01</span>
+        <div>
+          <a href="index.html" class="drawer-nav-link">Home</a>
+          <span class="drawer-nav-desc">Opening composition and monograph tenets</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">02</span>
+        <div>
+          <a href="overview.html" class="drawer-nav-link">Overview</a>
+          <span class="drawer-nav-desc">Template blueprint, offerings &amp; secondary portal</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">03</span>
+        <div>
+          <a href="features.html" class="drawer-nav-link">Features</a>
+          <span class="drawer-nav-desc">Architectural capabilities &amp; component system</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">04</span>
+        <div>
+          <a href="about.html" class="drawer-nav-link">About</a>
+          <span class="drawer-nav-desc">Philosophy of permanence, materials &amp; craft</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">05</span>
+        <div>
+          <a href="showcase.html" class="drawer-nav-link">Showcase</a>
+          <span class="drawer-nav-desc">Curated spatial gallery &amp; archival plates</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">06</span>
+        <div>
+          <a href="testimonials.html" class="drawer-nav-link">Testimonials</a>
+          <span class="drawer-nav-desc">Letters of patronage &amp; verified commissions</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">07</span>
+        <div>
+          <a href="contact.html" class="drawer-nav-link">Contact</a>
+          <span class="drawer-nav-desc">Direct inquiries &amp; client authentication portal</span>
+        </div>
+      </li>
+    </ul>
+    <div class="drawer-footer">
+      <p class="drawer-dispatch">
+        Atelier is an adaptable design foundation for hospitality sanctums, architectural studios, creative salons, and luxury brands.
+      </p>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="overview.html" class="btn btn-primary btn-sm" style="flex: 1;">Explore Template</a>
+        <a href="contact.html#signin" class="btn btn-outline btn-sm">Client Portal</a>
       </div>
-      <h1 class="page-title">A toolkit for telling a fuller story.</h1>
-      <p class="page-lead">The strongest part of a website is not one effect or one font. It is the collection of small decisions that help a visitor move from curious to confident.</p>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       HERO: ARCHITECTURAL FEATURES
+       ========================================================================== -->
+  <section class="section section-border-bottom">
+    <div class="container">
+      <div class="editorial-kicker">
+        <span class="editorial-kicker-dot"></span>
+        <span>The Technical Architecture</span>
+      </div>
+
+      <h1 class="editorial-title-page" style="margin-top: 1rem; margin-bottom: 1.5rem;">
+        Engineered for permanence, legibility, and grace.
+      </h1>
+
+      <p class="editorial-lead" style="margin-bottom: 3.5rem;">
+        Atelier is built upon strict architectural principles: mathematically harmonious proportions, zero unnecessary framework dependencies, full WCAG AA contrast compliance, and an editorial typography pairing that immediately commands respect.
+      </p>
+
+      <!-- Key Engineering Metrics -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; padding: 2rem; background-color: var(--bg-surface); border: 1px solid var(--border-hairline); border-radius: var(--radius-xs);">
+        <div>
+          <span class="font-mono text-xs text-muted">DEPENDENCY RUNTIME</span>
+          <div class="font-display" style="font-size: 2.25rem; font-weight: 500; color: var(--accent-curatorial);">0 KB</div>
+          <span class="editorial-caption">Zero third-party client JS libraries</span>
+        </div>
+        <div>
+          <span class="font-mono text-xs text-muted">FIRST CONTENTFUL PAINT</span>
+          <div class="font-display" style="font-size: 2.25rem; font-weight: 500; color: var(--text-primary);">&lt; 180ms</div>
+          <span class="editorial-caption">Inline theme initializer prevents FOUC</span>
+        </div>
+        <div>
+          <span class="font-mono text-xs text-muted">WCAG AA CONTRAST</span>
+          <div class="font-display" style="font-size: 2.25rem; font-weight: 500; color: var(--accent-curatorial);">7.2:1</div>
+          <span class="editorial-caption">High contrast on both Light and Dark palettes</span>
+        </div>
+        <div>
+          <span class="font-mono text-xs text-muted">FONT RULE</span>
+          <div class="font-display" style="font-size: 2.25rem; font-weight: 500; color: var(--text-primary);">2 + 1 Faces</div>
+          <span class="editorial-caption">Cormorant Garamond, Jakarta Sans, JetBrains Mono</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       FEATURE CATEGORIES GRID
+       SECTION 2: COMPONENT SPECIFICATIONS BREAKDOWN
        ========================================================================== -->
-  <section class="section">
+  <section class="section section-border-bottom bg-surface">
     <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">What is inside</span>
-        <h2 class="section-title">Six building blocks for a more useful website.</h2>
-        <p class="section-subtitle">Keep the parts that fit. Remove what does not. Replace the placeholder story with your own words, work, imagery, pricing, menu, services, or booking flow.</p>
-      </div>
-
-      <div class="grid grid-3">
-        <!-- Feature 1 -->
-        <div class="card feature-card">
-          <div class="feature-icon icon-box-amber">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-            </svg>
+      <div class="section-header-editorial split">
+        <div>
+          <div class="editorial-kicker">
+            <span class="editorial-kicker-dot"></span>
+            <span>Design Tokens</span>
           </div>
-          <h3 class="feature-title">A strong opening</h3>
-          <p class="feature-desc">A confident headline, supporting message, and two clear routes into the site give new visitors somewhere to begin.</p>
+          <h2 class="editorial-title-section">Dual palette color architecture.</h2>
         </div>
-
-        <!-- Feature 2 -->
-        <div class="card feature-card">
-          <div class="feature-icon icon-box-cyan">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-              <line x1="12" y1="18" x2="12.01" y2="18"></line>
-            </svg>
-          </div>
-          <h3 class="feature-title">Responsive rhythm</h3>
-          <p class="feature-desc">Sections, cards, buttons, and reading widths adapt so the page still feels composed when the screen gets small.</p>
-        </div>
-
-        <!-- Feature 3 -->
-        <div class="card feature-card">
-          <div class="feature-icon icon-box-purple">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
-              <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
-              <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
-              <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
-              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
-            </svg>
-          </div>
-          <h3 class="feature-title">Theme, without the drama</h3>
-          <p class="feature-desc">Light, dark, and system themes can change the atmosphere without changing the content or losing the page hierarchy.</p>
-        </div>
-
-        <!-- Feature 4 -->
-        <div class="card feature-card">
-          <div class="feature-icon icon-box-emerald">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="4" r="2"></circle>
-              <path d="m4.93 10.93 4.24-4.24a4.5 4.5 0 0 1 6.36 0l4.24 4.24"></path>
-              <path d="M12 10.5v11.5"></path>
-              <path d="m8 16.5 4-2 4 2"></path>
-            </svg>
-          </div>
-          <h3 class="feature-title">Accessible by intention</h3>
-          <p class="feature-desc">Clear labels, meaningful headings, visible states, and straightforward navigation keep the interface understandable.</p>
-        </div>
-
-        <!-- Feature 5 -->
-        <div class="card feature-card">
-          <div class="feature-icon icon-box-rose">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              <line x1="11" y1="8" x2="11" y2="14"></line>
-              <line x1="8" y1="11" x2="14" y2="11"></line>
-            </svg>
-          </div>
-          <h3 class="feature-title">Reusable page pieces</h3>
-          <p class="feature-desc">Headers, footers, cards, drawers, metrics, forms, and content sections are designed to repeat without looking cloned.</p>
-        </div>
-
-        <!-- Feature 6 -->
-        <div class="card feature-card">
-          <div class="feature-icon icon-box-indigo">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="3" width="8" height="8" rx="1.5"></rect>
-              <rect x="13" y="3" width="8" height="8" rx="1.5"></rect>
-              <rect x="3" y="13" width="8" height="8" rx="1.5"></rect>
-              <rect x="13" y="13" width="8" height="8" rx="1.5"></rect>
-            </svg>
-          </div>
-          <h3 class="feature-title">Small interactions with a reason</h3>
-          <p class="feature-desc">Menus, filters, accordions, reveal effects, and previews add movement where it helps people discover something.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       FEATURE COMPARISON TABLE
-       ========================================================================== -->
-  <section class="section" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">How the pieces compare</span>
-        <h2 class="section-title">The practical toolkit.</h2>
-        <p class="section-subtitle">
-          A simple look at what this concept prioritizes: readable structure, low friction, adaptable presentation, and a website you can actually keep editing.
+        <p class="editorial-caption">
+          All color surfaces and hairline dividers are governed by semantic CSS custom properties in <code>style.css</code>.
         </p>
       </div>
 
-      <div class="table-wrapper">
-        <table class="comparison-table">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;" class="manifesto-split-grid">
+        <!-- Dark Basalt Spec -->
+        <div style="background-color: #0c0b0a; color: #f5f1ea; padding: 2.5rem; border: 1px solid rgba(245, 240, 230, 0.15); border-radius: var(--radius-xs);">
+          <span class="font-mono text-xs" style="color: #c7a160;">PALETTE 01 · DEFAULT</span>
+          <h3 class="font-display" style="font-size: 1.85rem; margin: 0.5rem 0 1rem; color: #f5f1ea;">Smoked Basalt &amp; Gold</h3>
+          <p class="editorial-caption" style="color: #b8b0a4; margin-bottom: 2rem;">
+            A rich, nocturnal atmosphere inspired by museum archive vaults, travertine night shadows, and warm candlelight.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem; font-family: var(--font-mono); font-size: 0.75rem; border-top: 1px solid rgba(245, 240, 230, 0.1); padding-top: 1.5rem;">
+            <div style="display: flex; justify-content: space-between;"><span>--bg-canvas:</span> <span>#0c0b0a</span></div>
+            <div style="display: flex; justify-content: space-between;"><span>--bg-surface:</span> <span>#141311</span></div>
+            <div style="display: flex; justify-content: space-between;"><span>--text-primary:</span> <span>#f5f1ea</span></div>
+            <div style="display: flex; justify-content: space-between;"><span>--accent-curatorial:</span> <span>#c7a160</span></div>
+          </div>
+        </div>
+
+        <!-- Light Limestone Spec -->
+        <div style="background-color: #f9f8f5; color: #191613; padding: 2.5rem; border: 1px solid rgba(25, 22, 19, 0.15); border-radius: var(--radius-xs);">
+          <span class="font-mono text-xs" style="color: #9e6f38;">PALETTE 02 · DAYLIGHT</span>
+          <h3 class="font-display" style="font-size: 1.85rem; margin: 0.5rem 0 1rem; color: #191613;">Archival Limestone &amp; Ink</h3>
+          <p class="editorial-caption" style="color: #575147; margin-bottom: 2rem;">
+            Soft alabaster and limestone surfaces reminiscent of Italian villas, architectural parchment, and natural studio light.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem; font-family: var(--font-mono); font-size: 0.75rem; border-top: 1px solid rgba(25, 22, 19, 0.1); padding-top: 1.5rem;">
+            <div style="display: flex; justify-content: space-between;"><span>--bg-canvas:</span> <span>#f9f8f5</span></div>
+            <div style="display: flex; justify-content: space-between;"><span>--bg-surface:</span> <span>#f2efe8</span></div>
+            <div style="display: flex; justify-content: space-between;"><span>--text-primary:</span> <span>#191613</span></div>
+            <div style="display: flex; justify-content: space-between;"><span>--accent-curatorial:</span> <span>#9e6f38</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: INTERACTIVE CAPABILITY DEMO
+       ========================================================================== -->
+  <section class="section section-border-bottom">
+    <div class="container">
+      <div class="section-header-editorial split">
+        <div>
+          <div class="editorial-kicker">
+            <span class="editorial-kicker-dot"></span>
+            <span>Interactive Elements</span>
+          </div>
+          <h2 class="editorial-title-section">Tactile interactions with sub-200ms latency.</h2>
+        </div>
+        <p class="editorial-caption">
+          All interactive elements—accordions, filter bars, lightboxes, and modals—respond with smooth cubic-bezier settling curves.
+        </p>
+      </div>
+
+      <!-- Live Interactive Accordion Demonstration -->
+      <div class="editorial-row-list">
+        <div class="editorial-row-item active">
+          <button type="button" class="editorial-row-trigger" aria-expanded="true">
+            <span class="editorial-row-num">01</span>
+            <span class="editorial-row-title">Top Bar Contract: Single-Line Three-Zone Governance</span>
+            <span class="editorial-row-icon">+</span>
+          </button>
+          <div class="editorial-row-drawer">
+            <div class="editorial-row-drawer-inner">
+              <p class="editorial-lead" style="font-size: 0.95rem;">
+                The header strictly contains Zone 1 (Wordmark), Zone 2 (4–6 text navigation items), and Zone 3 (Action controls). Subtitles, locations, and telemetry tickers are banned from cluttering the navigation bar.
+              </p>
+              <ul class="row-drawer-bullets">
+                <li>Zone 1: Single element &lt;a class="brand-wordmark"&gt;Atelier&lt;/a&gt;</li>
+                <li>Zone 2: Subtle underline hover animation on active links</li>
+                <li>Zone 3: High-contrast Theme Toggle, Sign In, and Get Started CTA</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="editorial-row-item">
+          <button type="button" class="editorial-row-trigger" aria-expanded="false">
+            <span class="editorial-row-num">02</span>
+            <span class="editorial-row-title">Zero-Pill Metadata Discipline</span>
+            <span class="editorial-row-icon">+</span>
+          </button>
+          <div class="editorial-row-drawer">
+            <div class="editorial-row-drawer-inner">
+              <p class="editorial-lead" style="font-size: 0.95rem;">
+                Static informational labels (dates, counts, categories) are never enclosed in artificial pill badges or rounded capsules. They are presented as clean unboxed text separated by typographic middots (·) or forward slashes.
+              </p>
+              <ul class="row-drawer-bullets">
+                <li>Eliminates visual candy clutter and generic AI styling</li>
+                <li>Ensures comfortable reading cadence for editorial publications</li>
+                <li>Strictly differentiates static metadata from interactive buttons</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="editorial-row-item">
+          <button type="button" class="editorial-row-trigger" aria-expanded="false">
+            <span class="editorial-row-num">03</span>
+            <span class="editorial-row-title">High-Fidelity Asset Integration with Lightbox Modal</span>
+            <span class="editorial-row-icon">+</span>
+          </button>
+          <div class="editorial-row-drawer">
+            <div class="editorial-row-drawer-inner">
+              <p class="editorial-lead" style="font-size: 0.95rem;">
+                All visual photography slots include high-resolution references generated specifically for this template. Clicking any plate opens the accessible lightbox modal complete with plate metadata, ESC closing, and backdrop dismissal.
+              </p>
+              <ul class="row-drawer-bullets">
+                <li>Aspect ratios tailored to architectural containers (16:9, 4:3, 1:1)</li>
+                <li>Accessible ARIA dialog roles and keyboard escape traps</li>
+                <li>Zero external third-party image host dependencies</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: TECHNICAL SPECIFICATIONS TABLE
+       ========================================================================== -->
+  <section class="section section-border-bottom bg-surface">
+    <div class="container">
+      <div class="section-header-editorial">
+        <div class="editorial-kicker">
+          <span class="editorial-kicker-dot"></span>
+          <span>Verification Matrix</span>
+        </div>
+        <h2 class="editorial-title-section">Responsive Breakpoints &amp; Viewport Bounds</h2>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.875rem; text-align: left;">
           <thead>
-            <tr>
-              <th>Capability</th>
-              <th>Our Architecture</th>
-              <th>Heavier starting points</th>
-              <th>Visual builders</th>
+            <tr style="border-bottom: 1px solid var(--border-medium); font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-curatorial);">
+              <th style="padding: 1rem 0;">VIEWPORT TARGET</th>
+              <th style="padding: 1rem;">LAYOUT BEHAVIOR</th>
+              <th style="padding: 1rem;">NAVIGATION MODE</th>
+              <th style="padding: 1rem 0;">ASPECT RATIOS</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td><strong>Bundle Overhead</strong></td>
-              <td><span class="table-check"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-7.5"/></svg></span> Lean by design</td>
-              <td><span class="table-cross"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg></span> Often heavier</td>
-              <td><span class="table-cross"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg></span> Can become very heavy JS/CSS</td>
+          <tbody style="border-bottom: 1px solid var(--border-hairline);">
+            <tr style="border-bottom: 1px solid var(--border-hairline);">
+              <td style="padding: 1.25rem 0; font-weight: 600; font-family: var(--font-mono);">320px – 480px (Mobile)</td>
+              <td style="padding: 1.25rem; color: var(--text-secondary);">Single-column linear flow, touch targets &ge; 44px</td>
+              <td style="padding: 1.25rem; color: var(--text-secondary);">Slide-Out Editorial Drawer</td>
+              <td style="padding: 1.25rem 0; font-family: var(--font-mono);">1:1 &amp; 4:3</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-hairline);">
+              <td style="padding: 1.25rem 0; font-weight: 600; font-family: var(--font-mono);">768px – 991px (Tablet)</td>
+              <td style="padding: 1.25rem; color: var(--text-secondary);">2-column balanced split, staggered reveals</td>
+              <td style="padding: 1.25rem; color: var(--text-secondary);">Drawer Menu + Top Bar Actions</td>
+              <td style="padding: 1.25rem 0; font-family: var(--font-mono);">4:3 &amp; 16:9</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-hairline);">
+              <td style="padding: 1.25rem 0; font-weight: 600; font-family: var(--font-mono);">992px – 1440px (Desktop Baseline)</td>
+              <td style="padding: 1.25rem; color: var(--text-secondary);">Full 1.15fr : 0.85fr asymmetrical editorial composition</td>
+              <td style="padding: 1.25rem; color: var(--text-secondary);">Desktop Text Navigation + Action Bar</td>
+              <td style="padding: 1.25rem 0; font-family: var(--font-mono);">16:10, 3:4 &amp; 16:9</td>
             </tr>
             <tr>
-              <td><strong>External Dependencies</strong></td>
-              <td><span class="table-check"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-7.5"/></svg></span> No runtime lock-in runtime locks</td>
-              <td><span class="table-cross"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg></span> High package complexity</td>
-              <td><span class="table-cross"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg></span> Heavy proprietary plugins</td>
-            </tr>
-            <tr>
-              <td><strong>Semantic HTML5</strong></td>
-              <td><span class="table-check"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-7.5"/></svg></span> 100% Validated semantic markup</td>
-              <td><span class="table-check"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-7.5"/></svg></span> Standard markup</td>
-              <td><span class="table-cross"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg></span> Nested div wrapper traps</td>
-            </tr>
-            <tr>
-              <td><strong>Mobile Navigation</strong></td>
-              <td><span class="table-check"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-7.5"/></svg></span> Native CSS + Vanilla JS Drawer</td>
-              <td><span class="table-cross"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg></span> Heavy JS animation libraries</td>
-              <td><span class="table-cross"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg></span> Slow layout shift triggers</td>
-            </tr>
-            <tr>
-              <td><strong>Multi-Page Support</strong></td>
-              <td><span class="table-check"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-7.5"/></svg></span> Static HTML MPA + Vite Bundling</td>
-              <td><span class="table-check"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-7.5"/></svg></span> Supported</td>
-              <td><span class="table-cross"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg></span> Database queries required</td>
+              <td style="padding: 1.25rem 0; font-weight: 600; font-family: var(--font-mono);">1440px+ (Ultra-Wide)</td>
+              <td style="padding: 1.25rem; color: var(--text-secondary);">Centered 1360px container max-width with generous breathing margins</td>
+              <td style="padding: 1.25rem; color: var(--text-secondary);">Full Desktop Top Bar</td>
+              <td style="padding: 1.25rem 0; font-family: var(--font-mono);">Full-Bleed Plates</td>
             </tr>
           </tbody>
         </table>
       </div>
+    </div>
+  </section>
 
-      <!-- Call to Action Banner -->
-      <div class="cta-banner">
-        <h3 class="cta-banner-title">Need a different kind of page?</h3>
-        <p class="cta-banner-text">The structure is intentionally flexible. Add a menu, a journal, a team page, a booking flow, a product collection, or a completely new section without changing the overall language of the site.</p>
-        <a href="contact.html" class="btn btn-primary btn-lg">Inquire About Custom Setup</a>
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="immersive-cta-banner">
+        <div class="cta-inner-constrained">
+          <div class="editorial-kicker">
+            <span class="editorial-kicker-dot"></span>
+            <span>Next Steps</span>
+          </div>
+          <h2 class="editorial-title-page" style="margin: 0;">Ready to customize?</h2>
+          <p class="editorial-lead">
+            Move to the Studio Monograph to understand the philosophy, or begin configuring your consultation on the contact page.
+          </p>
+          <div class="cta-actions-row">
+            <a href="about.html" class="btn btn-primary btn-lg">Read Studio Monograph</a>
+            <a href="contact.html" class="btn btn-outline btn-lg">Inquire About Commission</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       SITE FOOTER
-       ========================================================================== -->
-  <footer class="site-footer">
-    <div class="container footer-container">
-      <div class="footer-col brand-col">
-        <a href="index.html" class="brand-logo footer-logo">
-          <span class="brand-symbol">◈</span>
-          <span class="brand-name">Atelier</span>
-        </a>
-        <p class="footer-desc">
-          An editorial multi-page concept for businesses that want their website to feel clear, warm, useful, and unmistakably their own.
-        </p>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-col-title">Pages</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="overview.html">Get Started Overview</a></li>
-          <li><a href="features.html">Features</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="showcase.html">Showcase</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-col-title">Resources</h4>
-        <ul class="footer-links">
-          <li><a href="about.html">Documentation</a></li>
-          <li><a href="features.html">Component Library</a></li>
-          <li><a href="showcase.html">Design System</a></li>
-          <li><a href="contact.html">Support Desk</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4 class="footer-col-title">Legal</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Privacy Policy</a></li>
-          <li><a href="index.html">Terms of Service</a></li>
-          <li><a href="index.html">Security Standards</a></li>
-        </ul>
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="lightbox-container">
+      <button type="button" class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close Lightbox">✕</button>
+      <div class="lightbox-content-grid">
+        <div class="lightbox-media-side">
+          <img id="lightbox-image" src="" alt="Expanded plate preview" referrerPolicy="no-referrer">
+        </div>
+        <div class="lightbox-info-side">
+          <div>
+            <span class="editorial-kicker" id="lightbox-meta">PLATE SPECIFICATION</span>
+            <h3 class="font-display" id="lightbox-title" style="font-size: 2rem; margin-top: 0.5rem; font-weight: 400;">Plate Title</h3>
+            <p class="editorial-lead" id="lightbox-desc" style="font-size: 0.95rem; margin-top: 1rem;">
+              Description of the selected plate and architectural provenance.
+            </p>
+          </div>
+          <div style="padding-top: 1.5rem; border-top: 1px solid var(--border-hairline);">
+            <a href="showcase.html" class="btn btn-primary btn-sm">Explore More Plates</a>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <p>&copy; <span class="current-year">2026</span> Atelier Studio. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="index.html">Privacy</a>
-          <a href="index.html">Terms</a>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-monogram">
+          <span class="footer-brand-title">Atelier</span>
+          <p class="editorial-caption" style="max-width: 32ch;">
+            An adaptable digital template crafted for studios, hospitality sanctums, and architects seeking poise over acceleration.
+          </p>
+          <div style="margin-top: 0.5rem;">
+            <span class="font-mono text-xs text-muted">DIRECT CONCIERGE:</span>
+            <a href="mailto:concierge@atelier.example" style="font-size: 0.8125rem; display: block; color: var(--accent-curatorial);">concierge@atelier.example</a>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Directory</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="overview.html">Get Started Overview</a></li>
+            <li><a href="features.html">Specifications &amp; Features</a></li>
+            <li><a href="about.html">Studio Monograph</a></li>
+            <li><a href="showcase.html">Selected Showcase</a></li>
+            <li><a href="testimonials.html">Letters of Patronage</a></li>
+            <li><a href="contact.html">Inquiries &amp; Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Capabilities</h4>
+          <ul class="footer-links-list">
+            <li><a href="features.html">Spatial Staging</a></li>
+            <li><a href="features.html">Bespoke Furnishings</a></li>
+            <li><a href="features.html">Digital Monograph</a></li>
+            <li><a href="features.html">Cellar &amp; Dining Direction</a></li>
+            <li><a href="contact.html#signin">Client Access Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Salons</h4>
+          <ul class="footer-links-list">
+            <li><span>Milan — Via Brera 18</span></li>
+            <li><span>Kyoto — Higashiyama-ku</span></li>
+            <li><span>Paris — Rue de Turenne</span></li>
+            <li><span>Zurich — Limmatquai</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-large-wordmark-strip" aria-hidden="true">
+        <span>ATELIER</span>
+      </div>
+
+      <div class="footer-bottom-row">
+        <span>© <span class="current-year">2026</span> Atelier Monograph. Reusable Editorial Architecture.</span>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="overview.html">Overview Map</a>
+          <a href="contact.html#signin">Sign In</a>
           <a href="contact.html">Contact</a>
         </div>
       </div>

@@ -3,21 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Atelier — A Point of View, Not a Pitch</title>
-  <meta name="description" content="The thinking behind Atelier: simple digital hospitality, useful detail, thoughtful storytelling, and a studio mindset.">
-  
-  <meta property="og:title" content="About Atelier — A Point of View, Not a Pitch">
-  <meta property="og:description" content="The thinking behind Atelier: simple digital hospitality, useful detail, thoughtful storytelling, and a studio mindset.">
+  <title>About &amp; Monograph — Atelier</title>
+  <meta name="description" content="The philosophy, craftsmanship principles, material studies, and curatorial direction behind Atelier.">
+
+  <meta property="og:title" content="About &amp; Monograph — Atelier">
+  <meta property="og:description" content="The philosophy, craftsmanship principles, material studies, and curatorial direction behind Atelier.">
   <meta property="og:type" content="website">
 
-  <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- Immediate Theme Initializer to Prevent Flash of Wrong Theme -->
   <script>
     (function() {
       const pref = localStorage.getItem('site-theme-preference') || localStorage.getItem('site-theme') || 'dark';
@@ -31,23 +29,20 @@
   </script>
 </head>
 <body>
-  <!-- Horizontal Scroll Progress Indicator -->
   <div class="scroll-progress-container" aria-hidden="true">
     <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
   </div>
 
-  <!-- ==========================================================================
-       SITE HEADER & NAVIGATION
-       ========================================================================== -->
-  <header class="site-header" id="site-header">
+  <!-- Top Bar -->
+  <header class="site-header">
     <div class="container header-container">
-      <a href="index.html" class="brand-logo" aria-label="Home">
-        <span class="brand-symbol">◈</span>
-        <span class="brand-name">Atelier</span>
+      <a href="index.html" class="brand-wordmark" aria-label="Atelier Home">
+        Atelier
       </a>
 
       <nav class="desktop-nav" aria-label="Main Navigation">
         <a href="index.html" class="nav-link">Home</a>
+        <a href="overview.html" class="nav-link">Overview</a>
         <a href="features.html" class="nav-link">Features</a>
         <a href="about.html" class="nav-link active">About</a>
         <a href="showcase.html" class="nav-link">Showcase</a>
@@ -57,222 +52,369 @@
 
       <div class="header-actions">
         <div class="theme-selector">
-          <button class="theme-toggle-btn" aria-label="Select theme" aria-haspopup="true" aria-expanded="false" title="Select theme">
-            <span class="theme-btn-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-            </span>
+          <button type="button" class="theme-toggle-btn" aria-label="Select color theme" aria-haspopup="true" aria-expanded="false" title="Switch Theme">
+            <span class="theme-btn-icon"></span>
           </button>
-          <div class="theme-dropdown" role="menu" aria-label="Theme options">
+          <div class="theme-dropdown" role="menu">
             <button type="button" class="theme-dropdown-item" data-theme-value="light" role="menuitem">
-              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="23" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-              <span class="theme-item-text">Light theme</span>
-              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Light theme</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </button>
             <button type="button" class="theme-dropdown-item" data-theme-value="dark" role="menuitem">
-              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-              <span class="theme-item-text">Dark theme</span>
-              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Dark theme</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </button>
             <button type="button" class="theme-dropdown-item" data-theme-value="system" role="menuitem">
-              <svg class="theme-item-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-              <span class="theme-item-text">System default</span>
-              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>System default</span>
+              <svg class="theme-check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </button>
           </div>
         </div>
-        <a href="contact.html" class="btn btn-outline btn-sm hide-on-mobile">Sign In</a>
-        <a href="overview.html" class="btn btn-primary btn-sm">Get Started</a>
-        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="menu-bar"></span>
-          <span class="menu-bar"></span>
-          <span class="menu-bar"></span>
-        </button>
-      </div>
-    </div>
 
-    <!-- Mobile Navigation Drawer -->
-    <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
-      <nav class="mobile-nav-links">
-        <a href="index.html" class="mobile-nav-link">Home</a>
-        <a href="features.html" class="mobile-nav-link">Features</a>
-        <a href="about.html" class="mobile-nav-link active">About</a>
-        <a href="showcase.html" class="mobile-nav-link">Showcase</a>
-        <a href="testimonials.html" class="mobile-nav-link">Testimonials</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
-        <a href="overview.html" class="mobile-nav-link">Overview</a>
-      </nav>
-      <div class="mobile-nav-cta">
-        <a href="overview.html" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+        <a href="contact.html#signin" class="btn btn-outline btn-sm">Sign In</a>
+        <a href="overview.html" class="btn btn-primary btn-sm">Get Started</a>
+
+        <button type="button" class="menu-toggle-btn" id="editorial-menu-trigger" aria-label="Toggle Navigation Drawer" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- ==========================================================================
-       PAGE HERO BANNER
-       ========================================================================== -->
-  <section class="page-hero">
-    <div class="container page-hero-inner">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span>/</span>
-        <span>About</span>
-      </div>
-      <h1 class="page-title">A small digital studio with strong opinions about clarity.</h1>
-      <p class="page-lead">We made Atelier around a simple belief: people should understand who you are, what you do, and where to go next without having to work for it.</p>
+  <!-- Editorial Drawer Backdrop & Slide-Out Menu -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="editorial-drawer" id="editorial-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <span class="editorial-kicker"><span class="editorial-kicker-dot"></span> Studio Index</span>
+      <button type="button" class="drawer-close-btn" id="drawer-close-btn" aria-label="Close Navigation Drawer">
+        Close ✕
+      </button>
     </div>
-  </section>
-
-  <!-- ==========================================================================
-       PHILOSOPHY SECTION
-       ========================================================================== -->
-  <section class="section">
-    <div class="container split-container">
-      <div class="split-content">
-        <span class="section-tagline">How we think</span>
-        <h2 class="section-title">Less decoration. More intention.</h2>
-        <p class="split-lead">The internet is full of beautiful pages that say very little. Atelier takes a different route: make the welcome memorable, make the useful information easy to find, and let the personality come through in the details.</p>
-        <p style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.65;">
-          That is why this concept keeps the structure readable, the interactions purposeful, and the page hierarchy easy to adapt. It is less about chasing novelty and more about building a place that can still feel right six months after launch.
-        </p>
-        <div class="split-actions">
-          <a href="features.html" class="btn btn-primary">Check Architecture</a>
-          <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+    <ul class="drawer-nav-list">
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">01</span>
+        <div>
+          <a href="index.html" class="drawer-nav-link">Home</a>
+          <span class="drawer-nav-desc">Opening composition and monograph tenets</span>
         </div>
-      </div>
-
-      <div class="split-visual">
-        <div class="visual-card">
-          <div class="visual-header">
-            <span class="visual-badge">Three things we keep close</span>
-            <span class="visual-meta">Clarity / Character / Care</span>
-          </div>
-          <div class="visual-body">
-            <ul class="value-list" style="margin-bottom: 0;">
-              <li class="value-item">
-                <span class="value-check">01</span>
-                <div>
-                  <strong style="color: #ffffff;">Accessibility First:</strong> Designed from day one to comply with WCAG 2.1 AA contrast and screen-reader accessibility standards.
-                </div>
-              </li>
-              <li class="value-item">
-                <span class="value-check">02</span>
-                <div>
-                  <strong style="color: #ffffff;">Instant Load Times:</strong> Optimized asset trees and zero runtime blocking guarantees rapid visual rendering.
-                </div>
-              </li>
-              <li class="value-item">
-                <span class="value-check">03</span>
-                <div>
-                  <strong style="color: #ffffff;">Maintainable structure:</strong> Clear page structure and familiar naming make future edits easier to understand.
-                </div>
-              </li>
-            </ul>
-          </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">02</span>
+        <div>
+          <a href="overview.html" class="drawer-nav-link">Overview</a>
+          <span class="drawer-nav-desc">Template blueprint, offerings &amp; secondary portal</span>
         </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">03</span>
+        <div>
+          <a href="features.html" class="drawer-nav-link">Features</a>
+          <span class="drawer-nav-desc">Architectural capabilities &amp; component system</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">04</span>
+        <div>
+          <a href="about.html" class="drawer-nav-link">About</a>
+          <span class="drawer-nav-desc">Philosophy of permanence, materials &amp; craft</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">05</span>
+        <div>
+          <a href="showcase.html" class="drawer-nav-link">Showcase</a>
+          <span class="drawer-nav-desc">Curated spatial gallery &amp; archival plates</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">06</span>
+        <div>
+          <a href="testimonials.html" class="drawer-nav-link">Testimonials</a>
+          <span class="drawer-nav-desc">Letters of patronage &amp; verified commissions</span>
+        </div>
+      </li>
+      <li class="drawer-nav-item">
+        <span class="drawer-nav-num">07</span>
+        <div>
+          <a href="contact.html" class="drawer-nav-link">Contact</a>
+          <span class="drawer-nav-desc">Direct inquiries &amp; client authentication portal</span>
+        </div>
+      </li>
+    </ul>
+    <div class="drawer-footer">
+      <p class="drawer-dispatch">
+        Atelier is an adaptable design foundation for hospitality sanctums, architectural studios, creative salons, and luxury brands.
+      </p>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="overview.html" class="btn btn-primary btn-sm" style="flex: 1;">Explore Template</a>
+        <a href="contact.html#signin" class="btn btn-outline btn-sm">Client Portal</a>
       </div>
     </div>
-  </section>
+  </aside>
 
   <!-- ==========================================================================
-       TEAM SECTION
+       ABOUT HERO & MONOGRAPH OPENING
        ========================================================================== -->
-  <section class="section" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+  <section class="section section-border-bottom">
     <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">How we work</span>
-        <h2 class="section-title">The people-shaped ideas behind the page.</h2>
-        <p class="section-subtitle">Introduce the place. Show the substance. Answer the doubts. Then invite people to take the next step when they are ready.</p>
+      <div class="editorial-kicker">
+        <span class="editorial-kicker-dot"></span>
+        <span>Studio Monograph</span>
       </div>
 
-      <div class="grid grid-3">
-        <!-- Team Member 1 -->
-        <div class="card team-card">
-          <div class="team-avatar">EM</div>
-          <h3 class="team-name">The Listener</h3>
-          <span class="team-role">Starts with the visitor</span>
-          <p class="team-bio">Looks for the questions someone will have on their first visit, then makes sure the page answers them without feeling like a manual.</p>
+      <h1 class="editorial-title-page" style="margin-top: 1rem; margin-bottom: 1.5rem;">
+        Silence as a deliberate architecture.
+      </h1>
+
+      <p class="editorial-lead" style="margin-bottom: 3.5rem;">
+        Atelier was conceived as an intellectual and aesthetic retreat from the breathless churning of digital commerce. We view every room, object, surface, and paragraph as an exercise in permanence.
+      </p>
+
+      <!-- Monograph Asymmetric Essay -->
+      <div class="manifesto-split-grid" style="align-items: start;">
+        <div>
+          <p class="drop-cap editorial-lead" style="margin-bottom: 1.5rem;">
+            When we strip away unnecessary ornaments, status indicators, and aggressive marketing jargon, what remains is the essence of hospitality and craft: proportion, weight, texture, and light. A dining table should feel rooted to the earth. A digital portfolio should breathe with the confidence of an art museum monograph.
+          </p>
+          <p class="editorial-lead" style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Our practice spans architectural environments, limited-edition furniture commissions, and curatorial identity systems. We believe that true luxury does not shout for attention—it holds space with immovable composure.
+          </p>
+          <div style="padding: 1.5rem 0; border-top: 1px solid var(--border-hairline); border-bottom: 1px solid var(--border-hairline); margin-top: 2rem;">
+            <span class="font-mono text-xs text-muted">DIRECTORATE NOTE</span>
+            <p class="font-display" style="font-size: 1.4rem; font-style: italic; margin-top: 0.4rem; color: var(--text-primary);">
+              &ldquo;Form is not an arbitrary choice. It is the physical shadow cast by purpose.&rdquo;
+            </p>
+          </div>
         </div>
 
-        <!-- Team Member 2 -->
-        <div class="card team-card">
-          <div class="team-avatar">JT</div>
-          <h3 class="team-name">The Editor</h3>
-          <span class="team-role">Shapes the story</span>
-          <p class="team-bio">Turns a pile of ideas, features, photographs, services, and details into a story with an intentional beginning, middle, and end.</p>
+        <!-- Right Companion Visual Asset -->
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div data-lightbox-trigger data-image-src="assets/images/atelier_materials_detail_1790497422048.jpg" data-plate-title="Drafting Archive &amp; Studio Instruments" data-plate-desc="Architectural sketches, swatch parchment, and hand-tooled solid brass instruments." data-plate-meta="MONOGRAPH ARCHIVE · STUDY NO. 08" style="cursor: pointer;">
+            <img src="assets/images/atelier_materials_detail_1790497422048.jpg" alt="Architectural drafting tools and raw wool parchment" style="border-radius: var(--radius-xs); border: 1px solid var(--border-hairline);" referrerPolicy="no-referrer">
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted);">
+            <span>STUDIO ARCHIVE · MILAN WORKSHOP</span>
+            <span class="font-mono">FIG. 04</span>
+          </div>
         </div>
-
-        <!-- Team Member 3 -->
-        <div class="card team-card">
-          <div class="team-avatar">AL</div>
-          <h3 class="team-name">The Host</h3>
-          <span class="team-role">Makes the next step easy</span>
-          <p class="team-bio">Thinks about the final moment: the booking, the message, the enquiry, the visit, or the simple feeling that the person knows what to do next.</p>
-        </div>
-      </div>
-
-      <!-- Call to Action Banner -->
-      <div class="cta-banner">
-        <h3 class="cta-banner-title">Bring your own character into the structure.</h3>
-        <p class="cta-banner-text">Swap the sample language, rewrite the story in your voice, and turn each section into something only your business could say.</p>
-        <a href="contact.html" class="btn btn-primary btn-lg">Reach Out Today</a>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       SITE FOOTER
+       SECTION 2: THE MATERIAL CANON
        ========================================================================== -->
-  <footer class="site-footer">
-    <div class="container footer-container">
-      <div class="footer-col brand-col">
-        <a href="index.html" class="brand-logo footer-logo">
-          <span class="brand-symbol">◈</span>
-          <span class="brand-name">Atelier</span>
-        </a>
-        <p class="footer-desc">
-          An editorial multi-page concept for businesses that want their website to feel clear, warm, useful, and unmistakably their own.
+  <section class="section section-border-bottom bg-surface">
+    <div class="container">
+      <div class="section-header-editorial split">
+        <div>
+          <div class="editorial-kicker">
+            <span class="editorial-kicker-dot"></span>
+            <span>Material Studies</span>
+          </div>
+          <h2 class="editorial-title-section">Four honest elements we build upon.</h2>
+        </div>
+        <p class="editorial-caption">
+          Materials chosen for how gracefully they patina over decades of tactile contact.
         </p>
       </div>
 
-      <div class="footer-col">
-        <h4 class="footer-col-title">Pages</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="overview.html">Get Started Overview</a></li>
-          <li><a href="features.html">Features</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="showcase.html">Showcase</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem;">
+        <div style="background-color: var(--bg-surface-elevated); padding: 2rem; border: 1px solid var(--border-hairline); border-radius: var(--radius-xs);">
+          <span class="font-mono text-xs" style="color: var(--accent-curatorial);">MATERIAL 01</span>
+          <h3 class="font-display" style="font-size: 1.6rem; margin: 0.5rem 0;">Roman Travertine</h3>
+          <p class="editorial-caption">
+            Quarried from ancient Tuscan beds, honed without glossy chemical varnishes. Porous, calm, and naturally temperature-regulating.
+          </p>
+        </div>
 
-      <div class="footer-col">
-        <h4 class="footer-col-title">Resources</h4>
-        <ul class="footer-links">
-          <li><a href="about.html">Documentation</a></li>
-          <li><a href="features.html">Component Library</a></li>
-          <li><a href="showcase.html">Design System</a></li>
-          <li><a href="contact.html">Support Desk</a></li>
-        </ul>
-      </div>
+        <div style="background-color: var(--bg-surface-elevated); padding: 2rem; border: 1px solid var(--border-hairline); border-radius: var(--radius-xs);">
+          <span class="font-mono text-xs" style="color: var(--accent-curatorial);">MATERIAL 02</span>
+          <h3 class="font-display" style="font-size: 1.6rem; margin: 0.5rem 0;">French Smoked Walnut</h3>
+          <p class="editorial-caption">
+            Air-dried for six seasons to relieve internal fiber tension. Finished with cold-pressed organic walnut oil and hand-buffed beeswax.
+          </p>
+        </div>
 
-      <div class="footer-col">
-        <h4 class="footer-col-title">Legal</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Privacy Policy</a></li>
-          <li><a href="index.html">Terms of Service</a></li>
-          <li><a href="index.html">Security Standards</a></li>
-        </ul>
+        <div style="background-color: var(--bg-surface-elevated); padding: 2rem; border: 1px solid var(--border-hairline); border-radius: var(--radius-xs);">
+          <span class="font-mono text-xs" style="color: var(--accent-curatorial);">MATERIAL 03</span>
+          <h3 class="font-display" style="font-size: 1.6rem; margin: 0.5rem 0;">Unbleached Raw Linen</h3>
+          <p class="editorial-caption">
+            Woven on heritage mechanical looms in Normandy. Heavy 540 GSM weight, tactile slub texture, and exceptional acoustic absorption.
+          </p>
+        </div>
+
+        <div style="background-color: var(--bg-surface-elevated); padding: 2rem; border: 1px solid var(--border-hairline); border-radius: var(--radius-xs);">
+          <span class="font-mono text-xs" style="color: var(--accent-curatorial);">MATERIAL 04</span>
+          <h3 class="font-display" style="font-size: 1.6rem; margin: 0.5rem 0;">Cast Lost-Wax Bronze</h3>
+          <p class="editorial-caption">
+            Hand-poured for table pulls, cutlery, and joint hardware. Intentionally unlacquered to develop a deep, personalized patina over generations.
+          </p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <p>&copy; <span class="current-year">2026</span> Atelier Studio. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="index.html">Privacy</a>
-          <a href="index.html">Terms</a>
+  <!-- ==========================================================================
+       SECTION 3: SALON LOCATIONS
+       ========================================================================== -->
+  <section class="section section-border-bottom">
+    <div class="container">
+      <div class="section-header-editorial">
+        <div class="editorial-kicker">
+          <span class="editorial-kicker-dot"></span>
+          <span>Global Presence</span>
+        </div>
+        <h2 class="editorial-title-section">Where conversations take shape.</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; padding-top: 1rem;">
+        <div style="border-top: 1px solid var(--border-hairline); padding-top: 1.5rem;">
+          <span class="font-mono text-xs text-muted">SALON 01 · LOMBARDY</span>
+          <h3 class="font-display" style="font-size: 1.5rem; margin: 0.25rem 0;">Milan</h3>
+          <p class="editorial-caption" style="margin-top: 0.5rem;">
+            Via Brera 18, 20121 Milano<br>
+            Primary design studio &amp; architectural material archive.
+          </p>
+        </div>
+
+        <div style="border-top: 1px solid var(--border-hairline); padding-top: 1.5rem;">
+          <span class="font-mono text-xs text-muted">SALON 02 · KANSAI</span>
+          <h3 class="font-display" style="font-size: 1.5rem; margin: 0.25rem 0;">Kyoto</h3>
+          <p class="editorial-caption" style="margin-top: 0.5rem;">
+            Higashiyama-ku, Kyoto 605-0862<br>
+            Stoneware ceramic firing workshop &amp; tea pavilion.
+          </p>
+        </div>
+
+        <div style="border-top: 1px solid var(--border-hairline); padding-top: 1.5rem;">
+          <span class="font-mono text-xs text-muted">SALON 03 · MARAIS</span>
+          <h3 class="font-display" style="font-size: 1.5rem; margin: 0.25rem 0;">Paris</h3>
+          <p class="editorial-caption" style="margin-top: 0.5rem;">
+            Rue de Turenne, 75003 Paris<br>
+            Textile research studio &amp; curatorial monographs.
+          </p>
+        </div>
+
+        <div style="border-top: 1px solid var(--border-hairline); padding-top: 1.5rem;">
+          <span class="font-mono text-xs text-muted">SALON 04 · CANTON</span>
+          <h3 class="font-display" style="font-size: 1.5rem; margin: 0.25rem 0;">Zurich</h3>
+          <p class="editorial-caption" style="margin-top: 0.5rem;">
+            Limmatquai 44, 8001 Zürich<br>
+            Private hospitality consultations &amp; commissions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="immersive-cta-banner">
+        <div class="cta-inner-constrained">
+          <div class="editorial-kicker">
+            <span class="editorial-kicker-dot"></span>
+            <span>Curatorial Collaboration</span>
+          </div>
+          <h2 class="editorial-title-page" style="margin: 0;">Begin a project consultation.</h2>
+          <p class="editorial-lead">
+            Every dialogue begins with a conversation about light, spatial proportion, and intent.
+          </p>
+          <div class="cta-actions-row">
+            <a href="contact.html" class="btn btn-primary btn-lg">Schedule A Meeting</a>
+            <a href="showcase.html" class="btn btn-outline btn-lg">View Curated Works</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="lightbox-container">
+      <button type="button" class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close Lightbox">✕</button>
+      <div class="lightbox-content-grid">
+        <div class="lightbox-media-side">
+          <img id="lightbox-image" src="" alt="Expanded plate preview" referrerPolicy="no-referrer">
+        </div>
+        <div class="lightbox-info-side">
+          <div>
+            <span class="editorial-kicker" id="lightbox-meta">PLATE SPECIFICATION</span>
+            <h3 class="font-display" id="lightbox-title" style="font-size: 2rem; margin-top: 0.5rem; font-weight: 400;">Plate Title</h3>
+            <p class="editorial-lead" id="lightbox-desc" style="font-size: 0.95rem; margin-top: 1rem;">
+              Description of the selected plate and architectural provenance.
+            </p>
+          </div>
+          <div style="padding-top: 1.5rem; border-top: 1px solid var(--border-hairline);">
+            <a href="showcase.html" class="btn btn-primary btn-sm">Explore More Plates</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-monogram">
+          <span class="footer-brand-title">Atelier</span>
+          <p class="editorial-caption" style="max-width: 32ch;">
+            An adaptable digital template crafted for studios, hospitality sanctums, and architects seeking poise over acceleration.
+          </p>
+          <div style="margin-top: 0.5rem;">
+            <span class="font-mono text-xs text-muted">DIRECT CONCIERGE:</span>
+            <a href="mailto:concierge@atelier.example" style="font-size: 0.8125rem; display: block; color: var(--accent-curatorial);">concierge@atelier.example</a>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Directory</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="overview.html">Get Started Overview</a></li>
+            <li><a href="features.html">Specifications &amp; Features</a></li>
+            <li><a href="about.html">Studio Monograph</a></li>
+            <li><a href="showcase.html">Selected Showcase</a></li>
+            <li><a href="testimonials.html">Letters of Patronage</a></li>
+            <li><a href="contact.html">Inquiries &amp; Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Capabilities</h4>
+          <ul class="footer-links-list">
+            <li><a href="features.html">Spatial Staging</a></li>
+            <li><a href="features.html">Bespoke Furnishings</a></li>
+            <li><a href="features.html">Digital Monograph</a></li>
+            <li><a href="features.html">Cellar &amp; Dining Direction</a></li>
+            <li><a href="contact.html#signin">Client Access Portal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4>Salons</h4>
+          <ul class="footer-links-list">
+            <li><span>Milan — Via Brera 18</span></li>
+            <li><span>Kyoto — Higashiyama-ku</span></li>
+            <li><span>Paris — Rue de Turenne</span></li>
+            <li><span>Zurich — Limmatquai</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-large-wordmark-strip" aria-hidden="true">
+        <span>ATELIER</span>
+      </div>
+
+      <div class="footer-bottom-row">
+        <span>© <span class="current-year">2026</span> Atelier Monograph. Reusable Editorial Architecture.</span>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="overview.html">Overview Map</a>
+          <a href="contact.html#signin">Sign In</a>
           <a href="contact.html">Contact</a>
         </div>
       </div>

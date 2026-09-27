@@ -1,6 +1,6 @@
 {
-  "name": "brandname",
-  "description": "A clean, modern, and responsive website starter template with modular components and semantic code structure.",
+  "name": "BrandName",
+  "description": "Atelier — An editorial, modern, and reusable website template for luxury spaces, studios, hospitality, and architecture.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
