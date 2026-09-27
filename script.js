@@ -159,17 +159,34 @@ function initMobileMenu() {
     drawer.setAttribute('aria-hidden', String(isExpanded));
   };
 
-  menuBtn.addEventListener('click', toggleMenu);
+  menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
 
-  // Close drawer when any mobile link is clicked
-  const mobileLinks = drawer.querySelectorAll('.mobile-nav-link, .btn:not(.theme-toggle-btn)');
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
+  // Close the menu when the user clicks anywhere outside the navigation.
+  // Clicking the three-line button again still toggles it normally.
+  document.addEventListener('click', (e) => {
+    if (!drawer.classList.contains('active')) return;
+    if (!drawer.contains(e.target) && !menuBtn.contains(e.target)) {
       menuBtn.setAttribute('aria-expanded', 'false');
       drawer.classList.remove('active');
       drawer.setAttribute('aria-hidden', 'true');
-    });
+    }
   });
+
+  // Close with Escape for keyboard users.
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('active')) {
+      menuBtn.setAttribute('aria-expanded', 'false');
+      drawer.classList.remove('active');
+      drawer.setAttribute('aria-hidden', 'true');
+      menuBtn.focus();
+    }
+  });
+
+  // Keep normal page-link navigation working. The destination page will
+  // initialize its own menu in the closed state.
 }
 
 /* ==========================================================================
