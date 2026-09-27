@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Atelier — Editorial Business Template</title>
-  <meta name="description" content="Get in touch with our team for inquiries, collaboration opportunities, support, or custom component development.">
+  <title>Contact Atelier — Start a Conversation</title>
+  <meta name="description" content="A simple contact page for project questions, collaborations, bookings, custom requirements, and general enquiries.">
   
-  <meta property="og:title" content="Contact - Atelier — Editorial Business Template">
-  <meta property="og:description" content="Get in touch with our team for inquiries, collaboration, or support.">
+  <meta property="og:title" content="Contact Atelier — Start a Conversation">
+  <meta property="og:description" content="A simple contact page for project questions, collaborations, bookings, custom requirements, and general enquiries.">
   <meta property="og:type" content="website">
 
   <!-- Google Fonts Preconnect -->
@@ -117,10 +117,8 @@
         <span>/</span>
         <span>Contact</span>
       </div>
-      <h1 class="page-title">Direct Communication &amp; Support</h1>
-      <p class="page-lead">
-        Have questions about the architecture, want to report an issue, or discuss a collaboration? Reach out to our engineering team.
-      </p>
+      <h1 class="page-title">Have something in mind? Start here.</h1>
+      <p class="page-lead">Tell us what you are building, changing, opening, making, or trying to explain. A rough idea is completely fine.</p>
     </div>
   </section>
 
@@ -132,8 +130,8 @@
       <div class="grid grid-2 contact-grid">
         <!-- Direct Directory Card -->
         <div class="card contact-info-card">
-          <h2 class="contact-card-title">Communication Directory</h2>
-          <p class="contact-card-sub">Reach our specialized departments directly through our verified channels.</p>
+          <h2 class="contact-card-title">A few easy ways to begin</h2>
+          <p class="contact-card-sub">This is sample contact copy for the template. Replace the departments, addresses, opening hours, and contact details with your real information before publishing.</p>
 
           <div class="contact-entries">
             <!-- Email -->
@@ -145,8 +143,8 @@
                 </svg>
               </div>
               <div class="entry-data">
-                <span class="entry-label">General &amp; Technical Support</span>
-                <a href="mailto:support@example.com" class="entry-value">support@example.com</a>
+                <span class="entry-label">General questions</span>
+                <a href="mailto:hello@atelier.example" class="entry-value">hello@atelier.example</a>
               </div>
             </div>
 
@@ -161,8 +159,8 @@
                 </svg>
               </div>
               <div class="entry-data">
-                <span class="entry-label">Partnerships &amp; Commercial</span>
-                <a href="mailto:partners@example.com" class="entry-value">partners@example.com</a>
+                <span class="entry-label">Projects &amp; collaborations</span>
+                <a href="mailto:projects@atelier.example" class="entry-value">projects@atelier.example</a>
               </div>
             </div>
 
@@ -174,7 +172,7 @@
                 </svg>
               </div>
               <div class="entry-data">
-                <span class="entry-label">Direct Phone Line</span>
+                <span class="entry-label">+1 (800) 555-0199</span>
                 <a href="tel:+18005550199" class="entry-value">+1 (800) 555-0199</a>
               </div>
             </div>
@@ -188,7 +186,7 @@
                 </svg>
               </div>
               <div class="entry-data">
-                <span class="entry-label">Headquarters Office</span>
+                <span class="entry-label">Studio location</span>
                 <span class="entry-value">100 Innovation Way, Suite 400<br>San Francisco, CA 94107, USA</span>
               </div>
             </div>
@@ -202,8 +200,8 @@
                 </svg>
               </div>
               <div class="entry-data">
-                <span class="entry-label">Operating Hours</span>
-                <span class="entry-value">Monday &ndash; Friday: 9:00 AM &ndash; 6:00 PM PST</span>
+                <span class="entry-label">Reply window</span>
+                <span class="entry-value">Usually within one working day</span>
               </div>
             </div>
           </div>
@@ -211,33 +209,33 @@
 
         <!-- Contact Form Card -->
         <div class="card contact-form-card">
-          <h2 class="contact-card-title">Send an Inquiry</h2>
-          <p class="contact-card-sub">Fill out the form below and our team will get back to you within 24 hours.</p>
+          <h2 class="contact-card-title">Send a note</h2>
+          <p class="contact-card-sub">Tell us what you need, what you already have, and what you would like the finished experience to feel like.</p>
 
           <form id="contact-form" class="contact-form" onsubmit="event.preventDefault(); window.handleContactSubmit(this);">
             <div class="form-row">
               <div class="form-group">
-                <label for="contact-name">Full Name *</label>
+                <label for="contact-name">Your name *</label>
                 <input type="text" id="contact-name" name="name" required placeholder="Jane Doe">
               </div>
               <div class="form-group">
-                <label for="contact-email">Email Address *</label>
+                <label for="contact-email">Your email *</label>
                 <input type="email" id="contact-email" name="email" required placeholder="jane@example.com">
               </div>
             </div>
 
             <div class="form-group">
-              <label for="contact-department">Department</label>
+              <label for="contact-department">What is this about?</label>
               <input type="text" id="contact-department" name="department" placeholder="Technical Support, Sales, or General">
             </div>
 
             <div class="form-group">
-              <label for="contact-message">Message *</label>
+              <label for="contact-message">Your message *</label>
               <textarea id="contact-message" name="message" rows="5" required placeholder="How can we assist you with your project?"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary" style="width: 100%;">
-              Send Inquiry
+              Send message
             </button>
           </form>
 
@@ -247,8 +245,8 @@
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
             </div>
-            <h4>Inquiry Received</h4>
-            <p>Thank you for reaching out. A confirmation has been recorded and our team will reply shortly.</p>
+            <h4>Message received</h4>
+            <p>Thanks for the note. In a real deployment, this is where you would confirm delivery and explain when the next reply should arrive.</p>
             <button type="button" class="btn btn-secondary btn-sm" onclick="window.resetContactForm()">Submit Another Message</button>
           </div>
         </div>
@@ -262,20 +260,15 @@
   <section class="section" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
     <div class="container">
       <div class="section-header text-center">
-        <span class="section-tagline">Common Inquiries</span>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-subtitle">
-          Quick answers to help you navigate and customize your multi-page website project.
-        </p>
+        <span class="section-tagline">A few useful answers</span>
+        <h2 class="section-title">Before you press send.</h2>
+        <p class="section-subtitle">These answers are written for the template itself. Replace them with the questions your own customers actually ask.</p>
       </div>
 
       <div class="faq-list">
         <!-- FAQ 1 -->
         <div class="faq-item">
-          <button type="button" class="faq-question">
-            <span>Can I customize the primary color palette across all pages?</span>
-            <span class="faq-icon">+</span>
-          </button>
+          <button type="button" class="faq-question">Can I change the words without changing the visual structure? +</button>
           <div class="faq-answer">
             Yes! All styling is powered by CSS custom properties in <code>style.css</code> under the <code>:root</code> selector. Simply update <code>--color-primary</code>, <code>--color-accent</code>, or <code>--bg-surface</code>, and the changes will instantly reflect across every page.
           </div>
@@ -283,10 +276,7 @@
 
         <!-- FAQ 2 -->
         <div class="faq-item">
-          <button type="button" class="faq-question">
-            <span>How do I add additional pages to this multi-page structure?</span>
-            <span class="faq-icon">+</span>
-          </button>
+          <button type="button" class="faq-question">Can I add, remove, or rename pages as the business grows? +</button>
           <div class="faq-answer">
             To create a new page, simply create an HTML file (e.g., <code>pricing.html</code>), link it in <code>vite.config.ts</code> under <code>rollupOptions.input</code>, and add it to the navigation list in each header.
           </div>
@@ -294,10 +284,7 @@
 
         <!-- FAQ 3 -->
         <div class="faq-item">
-          <button type="button" class="faq-question">
-            <span>Are external heavy JavaScript libraries required?</span>
-            <span class="faq-icon">+</span>
-          </button>
+          <button type="button" class="faq-question">Can the same idea work for a restaurant, studio, shop, or service business? +</button>
           <div class="faq-answer">
             No. The entire site is engineered with zero external client runtime libraries. The mobile menu, sticky header, accordions, and lightbox all run on lightweight, standards-compliant vanilla JavaScript.
           </div>
@@ -305,10 +292,7 @@
 
         <!-- FAQ 4 -->
         <div class="faq-item">
-          <button type="button" class="faq-question">
-            <span>Does this framework support mobile touch navigation?</span>
-            <span class="faq-icon">+</span>
-          </button>
+          <button type="button" class="faq-question">Can I keep the navigation simple on smaller screens? +</button>
           <div class="faq-answer">
             Yes. The mobile hamburger drawer automatically activates on screens below 768px, complete with accessible ARIA expansion states and touch-friendly click zones.
           </div>
